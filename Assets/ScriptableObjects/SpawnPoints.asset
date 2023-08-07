@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013600779acc1a34eb513230626646f9, type: 3}
-  m_Name: HealthValue
+  m_Script: {fileID: 11500000, guid: eeda4bb0aa8221b4da9bbe67a6dc801b, type: 3}
+  m_Name: SpawnPoints
   m_EditorClassIdentifier: 
-  initialValue: 1
-  runtimeValue: 1
+  initialSpawnCordinat: {x: 4.53, y: 2.8}
+  runtimeSpawnCordinat: {x: 4.53, y: 2.8}

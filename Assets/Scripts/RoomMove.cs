@@ -13,24 +13,24 @@ public class RoomMove : MonoBehaviour
     public string textName;
     public GameObject placeText;
     public TMP_Text textPlace;
-    public GameObject enemy;
-    public GameObject collisionDua;
+    public SpawnPoint spawnPoint;
+    public Transform spawnCordinat;
 
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main.GetComponent<CameraMovement>();
-        gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        // gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!enemy.activeInHierarchy)
-        {
-            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-            collisionDua.SetActive(false);
-        }
+        // if (!enemy.activeInHierarchy)
+        // {
+        //     gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        //     // collisionDua.SetActive(false);
+        // }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -40,6 +40,7 @@ public class RoomMove : MonoBehaviour
             cam.maxPosition += cameraChange;
             cam.minPosition += cameraChange;
             other.transform.position += playerChange;
+            spawnPoint.runtimeSpawnCordinat = spawnCordinat.position;
             if (needText)
             {
                 StartCoroutine(placeNameCo());

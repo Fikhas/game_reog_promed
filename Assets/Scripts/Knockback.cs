@@ -19,20 +19,24 @@ public class Knockback : MonoBehaviour
             Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
             if (hit != null)
             {
-                Vector2 difference = hit.transform.position - transform.position;
-                difference = difference.normalized * thrust;
-                hit.AddForce(difference, ForceMode2D.Impulse);
                 if (other.CompareTag("Enemy") && other.isTrigger)
                 {
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
                     other.GetComponent<Enemy>().Knock(hit, knockTime, damage);
+                    Vector2 difference = hit.transform.position - transform.position;
+                    difference = difference.normalized * thrust;
+                    hit.AddForce(difference, ForceMode2D.Impulse);
                 }
                 else if (other.CompareTag("Player"))
                 {
-                    if (other.GetComponent<PlayerMovement>().playerCurrentState != PlayerState.stagger)
+                    if (other.GetComponent<PlayerMovement>().playerCurrentState != PlayerState.stagger && !other.GetComponent<PlayerMovement>().isHit)
                     {
                         hit.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.stagger;
                         other.GetComponent<PlayerMovement>().Knock(knockTime, damage);
+                        other.GetComponent<PlayerMovement>().isHit = true;
+                        Vector2 difference = hit.transform.position - transform.position;
+                        difference = difference.normalized * thrust;
+                        hit.AddForce(difference, ForceMode2D.Impulse);
                     }
                 }
             }

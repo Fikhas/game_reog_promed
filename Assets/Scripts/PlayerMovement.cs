@@ -7,7 +7,8 @@ public enum PlayerState
     idle,
     attack,
     walk,
-    stagger
+    stagger,
+    hit
 }
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class PlayerMovement : MonoBehaviour
     public PlayerState playerCurrentState;
     public FloatValue currentHealth;
     public Signal playerHealthSignal;
+    public HealthBar healthBar;
+    [SerializeField] SpriteRenderer sprite;
+    public bool isHit;
+    private float timer;
+    private float delay = 3f;
+    private string color = "red";
+    public SpawnPoint initSpawnCordinat;
+    public GameObject playerDeathPanel;
     // public VectorValue startingPosition;
     // public Inventory playerInventory;
     // public SpriteRenderer receivedItemSprite;
@@ -28,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
+        healthBar.SetMaxValue(currentHealth.runtimeValue);
+        transform.position = initSpawnCordinat.runtimeSpawnCordinat;
     }
 
 
@@ -46,6 +57,28 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             AnimationUpdate();
+        }
+        if (isHit && timer < delay)
+        {
+            // playerCurrentState = PlayerState.hit;
+            if (color == "red" && Mathf.Round(timer * 10.0f) * 0.1f % .4f != 0f)
+            {
+                sprite.material.SetColor("_Color", Color.red);
+                color = "white";
+            }
+            else if (color == "white" && Mathf.Round(timer * 10.0f) * 0.1f % .4f == 0f)
+            {
+                sprite.material.SetColor("_Color", Color.white);
+                color = "red";
+            }
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            isHit = false;
+            timer = 0f;
+            sprite.material.SetColor("_Color", Color.white);
+            // playerCurrentState = PlayerState.walk;
         }
     }
 
@@ -66,8 +99,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        change.Normalize();
-        myRigidBody.velocity = new Vector3(change.x * speed, change.y * speed, change.z);
+        if (playerCurrentState != PlayerState.stagger)
+        {
+            change.Normalize();
+            myRigidBody.velocity = new Vector3(change.x * speed, change.y * speed, change.z);
+        }
     }
 
     // void MoveCharacter()
@@ -93,15 +129,20 @@ public class PlayerMovement : MonoBehaviour
 
     public void Knock(float knockTime, float damage)
     {
-        currentHealth.RuntimeValue -= damage;
+        currentHealth.runtimeValue -= damage;
         playerHealthSignal.Raise();
-        if (currentHealth.RuntimeValue > 0)
+        if (currentHealth.runtimeValue > 0)
         {
             StartCoroutine(KnockCo(knockTime));
+            healthBar.SetHealth(currentHealth.runtimeValue);
+            // sprite.material.SetColor("_Color", Color.red);
         }
         else
         {
             this.gameObject.SetActive(false);
+            healthBar.SetHealth(currentHealth.runtimeValue);
+            playerDeathPanel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
@@ -110,5 +151,20 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(knockTime);
         myRigidBody.velocity = Vector2.zero;
         playerCurrentState = PlayerState.idle;
+        // sprite.material.SetColor("_Color", Color.white);
+    }
+
+    public void SetPlayerSpawn()
+    {
+        playerDeathPanel.SetActive(false);
+        Time.timeScale = 1;
+        playerCurrentState = PlayerState.idle;
+        sprite.material.SetColor("_Color", Color.white);
+        gameObject.SetActive(true);
+        currentHealth.runtimeValue = currentHealth.initialValue;
+        healthBar.SetMaxValue(currentHealth.runtimeValue);
+        gameObject.transform.position = initSpawnCordinat.runtimeSpawnCordinat;
+        timer = 0;
+        isHit = false;
     }
 }

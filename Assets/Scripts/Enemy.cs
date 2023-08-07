@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
+    public HealthBar healthBar;
+    public GameObject currentEnemy;
     // public FloatValue maxHealth;
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class Enemy : MonoBehaviour
     {
         currentState = EnemyState.idle;
         // health = maxHealth.initialValue;
+        healthBar.SetMaxValue(health);
     }
 
     private void TakeDamage(float damage)
@@ -39,6 +42,7 @@ public class Enemy : MonoBehaviour
     {
         StartCoroutine(KnockCo(myRigidBody, knockTime));
         TakeDamage(damage);
+        healthBar.SetHealth(health);
     }
 
     private IEnumerator KnockCo(Rigidbody2D enemy, float knockTime)
