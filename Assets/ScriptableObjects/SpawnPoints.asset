@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeda4bb0aa8221b4da9bbe67a6dc801b, type: 3}
+  m_Name: SpawnPoints
+  m_EditorClassIdentifier: 
+  initialSpawnCordinat: {x: 4.53, y: 2.8}
+  runtimeSpawnCordinat: {x: 4.53, y: 2.8}
