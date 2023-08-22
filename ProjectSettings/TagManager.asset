@@ -6,11 +6,14 @@ TagManager:
   tags:
   - Enemy
   - Breakable
+  - Flowchart
+  - TextBox
+  - PlayerSword
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pickable
   - Water
   - UI
   - Player
@@ -42,4 +45,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Map
+    uniqueID: 1420105801
+    locked: 0
+  - name: Interactable
+    uniqueID: 2837932205
+    locked: 0
+  - name: Effect
+    uniqueID: 1007105215
+    locked: 0
+  - name: Enemy
+    uniqueID: 3770468187
+    locked: 0
+  - name: Player
+    uniqueID: 2623156267
+    locked: 0
+  - name: UI
+    uniqueID: 1273924423
     locked: 0
