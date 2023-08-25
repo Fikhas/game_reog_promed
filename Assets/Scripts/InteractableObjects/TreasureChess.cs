@@ -14,7 +14,7 @@ public class TreasureChess : MonoBehaviour
     [SerializeField] GameObject buttonClue;
     public static TreasureChess sharedInstance;
     private bool isOpened;
-    private bool isCanOpen;
+    [SerializeField] bool isCanOpen;
     private bool isOnArea;
     // public GameObject textBox;
     // public TMP_Text textField;

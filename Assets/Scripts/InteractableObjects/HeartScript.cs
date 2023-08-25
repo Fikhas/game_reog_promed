@@ -8,8 +8,8 @@ public class HeartScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerMovement.sharedInstance.healthBar.AddHealth(1);
-            other.GetComponent<PlayerMovement>().currentHealth.runtimeValue += 1;
+            PlayerMovement.sharedInstance.healthBar.AddHealth(40);
+            other.GetComponent<PlayerMovement>().currentHealth.runtimeValue += 40;
             gameObject.SetActive(false);
         }
     }

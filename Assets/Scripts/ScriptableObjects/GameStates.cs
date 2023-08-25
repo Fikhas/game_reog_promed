@@ -6,10 +6,13 @@ using UnityEngine;
 public class GameStates : ScriptableObject, ISerializationCallbackReceiver
 {
     public Signal enemyDeathSignal;
+    public StageRef currenStage;
+    public StageRef initialStage;
 
     public void OnAfterDeserialize()
     {
         enemyDeathSignal = null;
+        currenStage = initialStage;
     }
 
 
