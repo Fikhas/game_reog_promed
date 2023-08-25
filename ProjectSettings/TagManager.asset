@@ -9,6 +9,9 @@ TagManager:
   - Flowchart
   - TextBox
   - PlayerSword
+  - EnemySword
+  - EnemyBody
+  - PanelMainMenu
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
+  - Cut Scene
   - 
   - 
   - 

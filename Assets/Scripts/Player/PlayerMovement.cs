@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private float timer;
     private float delay = 3f;
     private string color = "red";
+    private bool isCanAttack;
 
     void Start()
     {
@@ -39,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
         healthBar.SetMaxValue(currentHealth.runtimeValue);
-        currentHealth.runtimeValue = currentHealth.runtimeValue - 2;
         healthBar.SetHealth(currentHealth.runtimeValue);
     }
 
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             change.x = Input.GetAxisRaw("Horizontal");
             change.y = Input.GetAxisRaw("Vertical");
         }
-        if (Input.GetButtonDown("Attack"))
+        if (Input.GetButtonDown("Attack") && !isCanAttack)
         {
             StartCoroutine(AttackCo());
         }
@@ -81,6 +81,10 @@ public class PlayerMovement : MonoBehaviour
             timer = 0f;
             sprite.material.SetColor("_Color", Color.white);
             // playerCurrentState = PlayerState.walk;
+        }
+        if (currentHealth.runtimeValue >= 100)
+        {
+            currentHealth.runtimeValue -= 1;
         }
     }
 
@@ -119,16 +123,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerCurrentState == PlayerState.imun)
         {
+            isCanAttack = true;
             animator.SetBool("isAttack", true);
             yield return new WaitForSeconds(.3f);
+            isCanAttack = false;
             animator.SetBool("isAttack", false);
         }
         else
         {
+            isCanAttack = true;
             animator.SetBool("isAttack", true);
             playerCurrentState = PlayerState.attack;
             // yield return null;
             yield return new WaitForSeconds(.3f);
+            isCanAttack = false;
             animator.SetBool("isAttack", false);
             playerCurrentState = PlayerState.walk;
             // currentState = PlayerState.walk;
@@ -179,6 +187,11 @@ public class PlayerMovement : MonoBehaviour
     public void SetPlayerToStagger()
     {
         playerCurrentState = PlayerState.stagger;
+    }
+
+    public void SetPlayerToInteract()
+    {
+        playerCurrentState = PlayerState.interact;
     }
 
     public void SetPlayerToIdle()

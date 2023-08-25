@@ -6,7 +6,7 @@ public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] Signal enemySignal;
     [SerializeField] GameObject enemy;
-    [SerializeField] Vector2 enemyPos;
+    [SerializeField] Transform[] enemyPos;
     public int enemyAmount;
     private bool isSpawn;
     private bool isSpawned;
@@ -17,7 +17,7 @@ public class EnemySpawn : MonoBehaviour
         {
             for (int i = 0; i < enemyAmount; i++)
             {
-                GameObject newEnemy = Instantiate(enemy, enemyPos, Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemy, enemyPos[i].position, Quaternion.identity);
                 newEnemy.GetComponent<Enemy>().deathSignal = enemySignal;
                 if (i < enemyAmount)
                 {

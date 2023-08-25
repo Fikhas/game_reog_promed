@@ -10,18 +10,19 @@ public class PlayerKnockback : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Debug.Log(other);
         if (other.CompareTag("Breakable"))
         {
             // other.GetComponent<Pot>().Smash();
         }
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("EnemyBody"))
         {
-            Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
+            Rigidbody2D hit = other.GetComponentInParent<Rigidbody2D>();
             if (hit != null)
             {
-                hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
-                other.GetComponent<Enemy>().Knock(hit, knockTime, damage);
-                other.GetComponent<Enemy>().isHit = true;
+                other.GetComponentInParent<Enemy>().currentState = EnemyState.stagger;
+                other.GetComponentInParent<Enemy>().Knock(hit, knockTime, damage);
+                other.GetComponentInParent<Enemy>().isHit = true;
                 Vector2 difference = hit.transform.position - transform.position;
                 difference = difference.normalized * thrust;
                 hit.AddForce(difference, ForceMode2D.Impulse);

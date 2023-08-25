@@ -22,7 +22,7 @@ public class KeyScript : MonoBehaviour
         {
             playerInventory.AddItem(item);
             buttonClue.SetActive(false);
-            gameObject.GetComponentInChildren<DialogPopUp>().PopUpActiveWithTime(item.itemDescription, 5f);
+            gameObject.GetComponentInChildren<DialogPopUp>().PopUpActiveWithTime(item.itemDescription, 3f);
             StartCoroutine(InactiveObject());
         }
     }
@@ -44,7 +44,7 @@ public class KeyScript : MonoBehaviour
 
     private IEnumerator InactiveObject()
     {
-        yield return new WaitForSeconds(5.1f);
+        yield return new WaitForSeconds(3.1f);
         gameObject.SetActive(false);
         if (signalToRaise != null)
         {

@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class ShieldScript : MonoBehaviour
@@ -9,6 +7,7 @@ public class ShieldScript : MonoBehaviour
     public static ShieldScript sharedInstance;
     public TMP_Text shieldAmount;
     public Inventory inventory;
+    private bool isCanUse;
 
     private void Start()
     {
@@ -51,7 +50,9 @@ public class ShieldScript : MonoBehaviour
 
     private IEnumerator ImunCo()
     {
+        isCanUse = true;
         yield return new WaitForSeconds(10f);
         PlayerMovement.sharedInstance.playerCurrentState = PlayerState.idle;
+        isCanUse = false;
     }
 }
