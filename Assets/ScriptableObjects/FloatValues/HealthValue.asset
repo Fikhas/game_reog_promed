@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HealthValue
   m_EditorClassIdentifier: 
   initialValue: 100
-  runtimeValue: 100
+  runtimeValue: 79

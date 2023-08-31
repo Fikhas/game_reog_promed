@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerKnockback : MonoBehaviour
+public class PlayerKnockback : Knockback
 {
-    public float thrust;
-    public float knockTime;
-    public float damage;
-
     void OnTriggerEnter2D(Collider2D other)
     {
         // Debug.Log(other);
@@ -24,8 +20,8 @@ public class PlayerKnockback : MonoBehaviour
                 other.GetComponentInParent<Enemy>().Knock(hit, knockTime, damage);
                 other.GetComponentInParent<Enemy>().isHit = true;
                 Vector2 difference = hit.transform.position - transform.position;
-                difference = difference.normalized * thrust;
-                hit.AddForce(difference, ForceMode2D.Impulse);
+                Vector2 diff = difference.normalized;
+                hit.AddForce(diff * thrust, ForceMode2D.Impulse);
             }
         }
     }

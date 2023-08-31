@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008070648, y: -0.40353185}
+  m_Offset: {x: 0.0024528801, y: -0.35578087}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28978407, y: 0.19293627}
+  m_Size: {x: 0.3684327, y: 0.41202885}
   m_EdgeRadius: 0
 --- !u!1 &5080068853934289554
 GameObject:
@@ -216,6 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9956f80907ac63e4788961ecd3bad3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: {x: 0, y: 0, z: 0}
+  myRigidBody: {fileID: 0}
   animator: {fileID: 5080068853934289553}
   playerCurrentState: 0
   currentHealth: {fileID: 11400000, guid: 74834bbdb4a0dca4c99fdb676f64d675, type: 2}
@@ -224,8 +226,10 @@ MonoBehaviour:
   sprite: {fileID: 5080068853934289559}
   initSpawnCordinat: {fileID: 11400000, guid: ebdce270cdb153d4b9029773c0b352b4, type: 2}
   playerDeathPanel: {fileID: 0}
+  playerFacing: {x: 0, y: 0}
   speed: 5
   isHit: 0
+  timer: 0
 --- !u!50 &5080068854466432117
 Rigidbody2D:
   serializedVersion: 4
@@ -466,10 +470,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2827310849741455535, guid: 3eac82c4c123df34f805d1483125073b, type: 3}
-      propertyPath: thrust
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2680890807191197622, guid: 3eac82c4c123df34f805d1483125073b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3eac82c4c123df34f805d1483125073b, type: 3}
@@ -580,10 +580,6 @@ PrefabInstance:
     - target: {fileID: 2680890807191197623, guid: 3eac82c4c123df34f805d1483125073b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2827310849741455535, guid: 3eac82c4c123df34f805d1483125073b, type: 3}
-      propertyPath: thrust
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2680890807191197622, guid: 3eac82c4c123df34f805d1483125073b, type: 3}
@@ -696,10 +692,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2827310849741455535, guid: 3eac82c4c123df34f805d1483125073b, type: 3}
-      propertyPath: thrust
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eac82c4c123df34f805d1483125073b, type: 3}
 --- !u!4 &5080068855723269661 stripped
@@ -725,10 +717,6 @@ PrefabInstance:
     - target: {fileID: 4455881186621531840, guid: beb15cb256ba8b841aa4555d219ac4bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455881186621531840, guid: beb15cb256ba8b841aa4555d219ac4bc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.98
       objectReference: {fileID: 0}
     - target: {fileID: 4455881186621531840, guid: beb15cb256ba8b841aa4555d219ac4bc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -765,14 +753,6 @@ PrefabInstance:
     - target: {fileID: 8334868223217226371, guid: beb15cb256ba8b841aa4555d219ac4bc, type: 3}
       propertyPath: m_SortingLayer
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334868223217226371, guid: beb15cb256ba8b841aa4555d219ac4bc, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334868223217226371, guid: beb15cb256ba8b841aa4555d219ac4bc, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1671811029
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beb15cb256ba8b841aa4555d219ac4bc, type: 3}

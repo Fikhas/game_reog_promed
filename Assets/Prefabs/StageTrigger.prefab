@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28acfae5358a8f499ebc251cd8d965f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPosition: {x: 0, y: 0, z: 0}
+  stageRef: {fileID: 11400000, guid: 525c33a547682cb4bb07415a7db618f5, type: 2}
   isEntered: 0
 --- !u!114 &4958793743988705985
 MonoBehaviour:
