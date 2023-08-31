@@ -12,10 +12,18 @@ public enum PlayerState
     imun,
     interact
 }
+
+public enum PlayerFacing
+{
+    right,
+    left,
+    up,
+    down
+}
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D myRigidBody;
-    private Vector3 change;
+    public Vector3 change;
+    public Rigidbody2D myRigidBody;
     public Animator animator;
     public PlayerState playerCurrentState;
     public FloatValue currentHealth;
@@ -25,9 +33,11 @@ public class PlayerMovement : MonoBehaviour
     public SpawnPoint initSpawnCordinat;
     public GameObject playerDeathPanel;
     public static PlayerMovement sharedInstance;
+    // public PlayerFacing playerFacing;
+    public Vector2 playerFacing;
     public float speed;
     public bool isHit;
-    private float timer;
+    public float timer;
     private float delay = 3f;
     private string color = "red";
     private bool isCanAttack;
@@ -41,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("moveY", -1);
         healthBar.SetMaxValue(currentHealth.runtimeValue);
         healthBar.SetHealth(currentHealth.runtimeValue);
+        // playerFacing = PlayerFacing.down;
     }
 
 
@@ -51,6 +62,23 @@ public class PlayerMovement : MonoBehaviour
         {
             change.x = Input.GetAxisRaw("Horizontal");
             change.y = Input.GetAxisRaw("Vertical");
+            playerFacing = new Vector2(change.x, change.y);
+            // if (change.x > 0)
+            // {
+            //     playerFacing = PlayerFacing.right;
+            // }
+            // else if (change.x < 0)
+            // {
+            //     playerFacing = PlayerFacing.left;
+            // }
+            // else if (change.y > 0)
+            // {
+            //     playerFacing = PlayerFacing.up;
+            // }
+            // else
+            // {
+            //     playerFacing = PlayerFacing.down;
+            // }
         }
         if (Input.GetButtonDown("Attack") && !isCanAttack)
         {
@@ -149,7 +177,7 @@ public class PlayerMovement : MonoBehaviour
         // playerHealthSignal.Raise();
         if (currentHealth.runtimeValue > 0)
         {
-            StartCoroutine(KnockCo(knockTime));
+            StartCoroutine(KnockCo(.4f));
             healthBar.SetHealth(currentHealth.runtimeValue);
             // sprite.material.SetColor("_Color", Color.red);
         }

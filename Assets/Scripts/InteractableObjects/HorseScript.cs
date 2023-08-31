@@ -9,7 +9,8 @@ public class HorseScript : MonoBehaviour
     [SerializeField] GameObject buttonClue;
     [SerializeField] Item item;
     [SerializeField] Inventory playerInventory;
-    private bool isCanTake;
+    [SerializeField] bool isCanTake;
+    private bool isTaken;
     private bool isOnArea;
 
     private void Start()
@@ -19,8 +20,9 @@ public class HorseScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnArea && buttonClue.activeInHierarchy)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnArea && buttonClue.activeInHierarchy && !isTaken)
         {
+            isTaken = true;
             playerInventory.AddItem(item);
             buttonClue.SetActive(false);
             gameObject.GetComponentInChildren<DialogPopUp>().PopUpActiveWithTime(item.itemDescription, 3f);

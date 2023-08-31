@@ -13,23 +13,22 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     public EnemyState currentState;
+    public HealthBar healthBar;
+    private SpriteRenderer sprite;
+    public Signal deathSignal;
+    public static Enemy sharedInstance;
     public float health;
     public string enemyName;
-    public int baseAttack;
-    public float moveSpeed;
-    public HealthBar healthBar;
-    public GameObject currentEnemy;
     public bool isHit;
     private float timer;
     private float delay = 3f;
     private string color = "red";
-    private SpriteRenderer sprite;
-    public Signal deathSignal;
 
     void Awake()
     {
         healthBar.SetMaxValue(health);
         sprite = GetComponent<SpriteRenderer>();
+        sharedInstance = this;
     }
 
     void Update()
@@ -71,7 +70,10 @@ public class Enemy : MonoBehaviour
     public void Knock(Rigidbody2D myRigidBody, float knockTime, float damage)
     {
         StartCoroutine(KnockCo(myRigidBody, knockTime));
-        TakeDamage(damage);
+        if (currentState == EnemyState.stagger)
+        {
+            TakeDamage(damage);
+        }
         healthBar.SetHealth(health);
     }
 

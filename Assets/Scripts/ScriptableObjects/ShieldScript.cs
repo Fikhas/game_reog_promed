@@ -17,7 +17,7 @@ public class ShieldScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("UseShield"))
+        if (Input.GetButtonDown("UseShield") && !isCanUse)
         {
             UseShield();
         }

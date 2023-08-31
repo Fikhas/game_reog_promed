@@ -9,6 +9,7 @@ public class KeyScript : MonoBehaviour
     [SerializeField] Item item;
     [SerializeField] Inventory playerInventory;
     private bool isCanTake;
+    private bool isTaken;
     private bool isOnArea;
 
     private void Start()
@@ -18,11 +19,12 @@ public class KeyScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnArea)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnArea && !isTaken)
         {
             playerInventory.AddItem(item);
             buttonClue.SetActive(false);
             gameObject.GetComponentInChildren<DialogPopUp>().PopUpActiveWithTime(item.itemDescription, 3f);
+            isTaken = true;
             StartCoroutine(InactiveObject());
         }
     }
