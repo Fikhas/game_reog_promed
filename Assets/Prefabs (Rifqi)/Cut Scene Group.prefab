@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1382700668695732962
+--- !u!1 &1474179433379025382
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,82 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8582981066489737546}
-  - component: {fileID: 4580324935964637856}
+  - component: {fileID: 7202018587497115060}
+  - component: {fileID: 7781700225817144024}
   m_Layer: 0
-  m_Name: cut scene 1.2 22-8
+  m_Name: Character - Narator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8582981066489737546
+--- !u!4 &7202018587497115060
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382700668695732962}
+  m_GameObject: {fileID: 1474179433379025382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.25, y: -42.5, z: -0.19908339}
-  m_LocalScale: {x: 0.5019145, y: 0.5019145, z: 0.5019145}
+  m_LocalPosition: {x: -5.7493486, y: -12.701234, z: -0.19908339}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 24
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4580324935964637856
-SpriteRenderer:
+--- !u!114 &7781700225817144024
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382700668695732962}
+  m_GameObject: {fileID: 1474179433379025382}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c19b29b5b6ed9455bb391f500453e18e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 80.74, y: 45.69}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Narator
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  soundEffect: {fileID: 0}
+  portraits: []
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1 &2097636397232492587
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,8 +134,7 @@ GameObject:
   - component: {fileID: 2097636397243746000}
   - component: {fileID: 2097636397243746002}
   - component: {fileID: 7112378579444131206}
-  - component: {fileID: 7249164457093219190}
-  - component: {fileID: 6854256661388464154}
+  - component: {fileID: 3901794767101426802}
   m_Layer: 0
   m_Name: Flowchart cut scene 2
   m_TagString: Untagged
@@ -252,7 +218,7 @@ MonoBehaviour:
   itemId: 21
   blockName: Cut Scene 2.1
   description: 
-  eventHandler: {fileID: 6854256661388464154}
+  eventHandler: {fileID: 0}
   commandList:
   - {fileID: 2097636397243745961}
   - {fileID: 2097636397243745980}
@@ -283,7 +249,7 @@ MonoBehaviour:
   storyText: Berbeda dengan situasi Klono Sewandono, Singo Barong justru kesal karena
     belum mendapatkan syarat apapun.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -367,7 +333,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -397,7 +363,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -444,7 +410,7 @@ MonoBehaviour:
   - {fileID: 2097636397243745960}
   - {fileID: 2097636397243745966}
   - {fileID: 2097636397243745959}
-  - {fileID: 7249164457093219190}
+  - {fileID: 3901794767101426802}
   suppressAllAutoSelections: 0
 --- !u!114 &2097636397243745954
 MonoBehaviour:
@@ -463,7 +429,7 @@ MonoBehaviour:
   storyText: 'Namun, semua rencana Singo Barong telah diketahui oleh Klono Sewandono
     melalui salah satu prajuritnya. '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -544,7 +510,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Ia tidak suka dengan cara licik yang dipikirkan Singo Barong. \n"
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -596,7 +562,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -860,7 +826,7 @@ MonoBehaviour:
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
---- !u!114 &7249164457093219190
+--- !u!114 &3901794767101426802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -876,7 +842,7 @@ MonoBehaviour:
   indentLevel: 0
   duration: 1
   fadeOut: 1
-  targetView: {fileID: 4270854033027177844}
+  targetView: {fileID: 8154159860335790204}
   waitUntilFinished: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
@@ -885,21 +851,6 @@ MonoBehaviour:
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
---- !u!114 &6854256661388464154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097636397243746003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 2097636397243745979}
-  suppressBlockAutoSelect: 0
-  waitForFrames: 1
 --- !u!1 &2097636397438275176
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,16 +933,17 @@ GameObject:
   - component: {fileID: 2097636397478444211}
   - component: {fileID: 2097636397478444213}
   - component: {fileID: 2097636397478444214}
-  - component: {fileID: 2097636397478444216}
   - component: {fileID: 2097636397478444217}
   - component: {fileID: 2097636397478444219}
   - component: {fileID: 2097636397478444220}
   - component: {fileID: 2097636397478444221}
-  - component: {fileID: 2097636397478444222}
   - component: {fileID: 2097636397478444180}
   - component: {fileID: 2097636397478444181}
   - component: {fileID: 2097636397478444178}
   - component: {fileID: 3879229112684967755}
+  - component: {fileID: 8453724522236342293}
+  - component: {fileID: 806270510142613645}
+  - component: {fileID: 2723774015579454556}
   m_Layer: 0
   m_Name: Flowchart cut scene 1
   m_TagString: Untagged
@@ -1027,11 +979,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -33.212795, y: -17.658127}
+  scrollPos: {x: -12.042531, y: 11.328056}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.9289413
+  zoom: 0.8058879
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1039,7 +991,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 2097636397478444185}
+  - {fileID: 2097636397478444165}
   selectedCommands: []
   variables: []
   description: 
@@ -1068,7 +1020,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 66
     y: 68.59594
-    width: 127.50759
+    width: 126.93378
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1186,12 +1138,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: 'Sampai saat ini, sang Putri tidak memiliki kemauan untuk menikah. Hal
-    ini membuat Raja Kediri berusaha untuk membujuk putrinya.
+  storyText: 'Sampai saat ini, sang Putri tidak memiliki keinginan untuk menikah.
+    Hal ini membuat Raja Kediri berusaha untuk membujuk putrinya.
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1217,8 +1169,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 69.68409
-    y: 141.00809
-    width: 128.58408
+    y: 139.92667
+    width: 127.554214
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1271,12 +1223,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 10
   indentLevel: 0
-  storyText: 'Setelah mendapatkan jawaban dari sang Putri, sayembara pun langsung
-    dilakukan untuk mencari siapa yang sanggup memenuhi semua syarat tersebut.
+  storyText: 'Setelah mendapatkan jawaban dari sang Putri, sayembara langsung dilakukan
+    untuk mencari siapa yang sanggup memenuhi semua syarat tersebut.
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1304,7 +1256,7 @@ MonoBehaviour:
   storyText: Hal ini, membuat Raja semakin cemas dengan masa depan sang Putri di
     kemudian hari.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1332,7 +1284,7 @@ MonoBehaviour:
   storyText: Tidak ada satupun penduduk yang menjawab pertanyaan dari sang Raja karena
     tidak ada yang sanggup memenuhi syarat itu.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1357,7 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 14
   indentLevel: 0
-  storyText: Apakah ada yang sanggup untuk memenuhi semua syarat dari putriku?
+  storyText: Apakah ada yang sanggup untuk memenuhi semua syarat yang diminta putriku?
   description: 
   character: {fileID: 2097636398078433487}
   portrait: {fileID: 0}
@@ -1385,8 +1337,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 71.72892
-    y: 217.43286
-    width: 129.66058
+    y: 216.35637
+    width: 128.79507
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1395,6 +1347,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 8453724522236342293}
   - {fileID: 2097636397478444166}
   - {fileID: 2097636397478444220}
   - {fileID: 2097636397478444171}
@@ -1402,9 +1355,9 @@ MonoBehaviour:
   - {fileID: 2097636397478444219}
   - {fileID: 2097636397478444217}
   - {fileID: 2097636397478444169}
-  - {fileID: 2097636397478444216}
+  - {fileID: 806270510142613645}
   - {fileID: 2097636397478444168}
-  - {fileID: 2097636397478444222}
+  - {fileID: 2723774015579454556}
   - {fileID: 2097636397478444167}
   - {fileID: 3879229112684967755}
   suppressAllAutoSelections: 0
@@ -1427,7 +1380,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1457,7 +1410,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1484,7 +1437,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: ' Baiklah kalau begitu wahai Raja.'
   description: 
-  character: {fileID: 0}
+  character: {fileID: 2097636397493528032}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1562,7 +1515,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1738,27 +1691,6 @@ MonoBehaviour:
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
---- !u!114 &2097636397478444216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097636397478444192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c952ea1ad444e479b570fa242679c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 66
-  indentLevel: 0
-  duration: 1
-  targetView: {fileID: 2097636397438275174}
-  waitUntilFinished: 1
-  targetCamera: {fileID: 0}
-  orthoSizeTweenType: 4
-  posTweenType: 4
-  rotTweenType: 4
 --- !u!114 &2097636397478444217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,11 +1726,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 88
   indentLevel: 0
-  storyText: 'Serta Singo Brong yang merupakan raja Kerajaan Lodaya.
+  storyText: 'Serta Singo Barong yang merupakan raja Kerajaan Lodaya.
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1824,7 +1756,7 @@ MonoBehaviour:
   itemId: 89
   indentLevel: 0
   duration: 1
-  targetView: {fileID: 0}
+  targetView: {fileID: 2097636397438275174}
   waitUntilFinished: 1
   targetCamera: {fileID: 0}
   orthoSizeTweenType: 4
@@ -1845,28 +1777,7 @@ MonoBehaviour:
   itemId: 90
   indentLevel: 0
   duration: 1
-  targetView: {fileID: 0}
-  waitUntilFinished: 1
-  targetCamera: {fileID: 0}
-  orthoSizeTweenType: 4
-  posTweenType: 4
-  rotTweenType: 4
---- !u!114 &2097636397478444222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097636397478444192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c952ea1ad444e479b570fa242679c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 91
-  indentLevel: 0
-  duration: 1
-  targetView: {fileID: 2097636397693648321}
+  targetView: {fileID: 4184812403881557462}
   waitUntilFinished: 1
   targetCamera: {fileID: 0}
   orthoSizeTweenType: 4
@@ -1886,9 +1797,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 92
   indentLevel: 0
-  storyText: 'Dahulu kala, hiduplah seorang putri Kerajaan Kediri bernama Dewi Soggolangit. '
+  storyText: 'Dahulu kala, hiduplah seorang putri Kerajaan Kediri bernama Dewi Songgolangit. '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1961,11 +1872,78 @@ MonoBehaviour:
   indentLevel: 0
   _targetGameObject:
     gameObjectRef: {fileID: 0}
-    gameObjectVal: {fileID: 5270879002113627325}
+    gameObjectVal: {fileID: 2097636397984648648}
   activeState:
     booleanRef: {fileID: 0}
     booleanVal: 1
   targetGameObjectOLD: {fileID: 0}
+--- !u!114 &8453724522236342293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097636397478444192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437f9a4e3dbc647f9bdce95308418bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 96
+  indentLevel: 0
+  duration: 1
+  fadeOut: 1
+  targetView: {fileID: 2097636397693648321}
+  waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
+  targetCamera: {fileID: 0}
+  fadeTweenType: 4
+  orthoSizeTweenType: 4
+  posTweenType: 4
+  rotTweenType: 4
+--- !u!114 &806270510142613645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097636397478444192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c952ea1ad444e479b570fa242679c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 97
+  indentLevel: 0
+  duration: 1
+  targetView: {fileID: 3436805273569672337}
+  waitUntilFinished: 1
+  targetCamera: {fileID: 0}
+  orthoSizeTweenType: 4
+  posTweenType: 4
+  rotTweenType: 4
+--- !u!114 &2723774015579454556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097636397478444192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c952ea1ad444e479b570fa242679c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 98
+  indentLevel: 0
+  duration: 1
+  targetView: {fileID: 2097636397693648321}
+  waitUntilFinished: 1
+  targetCamera: {fileID: 0}
+  orthoSizeTweenType: 4
+  posTweenType: 4
+  rotTweenType: 4
 --- !u!1 &2097636397493528033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,7 +1974,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2097636397493528032
 MonoBehaviour:
@@ -2047,7 +2025,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2097636397523046223
 MonoBehaviour:
@@ -2148,6 +2126,7 @@ Transform:
   - {fileID: 2097636398528754683}
   - {fileID: 2097636397438275175}
   - {fileID: 1758556947563770900}
+  - {fileID: 5080350177876616112}
   m_Father: {fileID: 8858695839385643032}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2293,7 +2272,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2097636397946981834
 MonoBehaviour:
@@ -2407,7 +2386,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2097636397984648647
 SpriteRenderer:
@@ -2472,7 +2451,7 @@ GameObject:
   - component: {fileID: 2097636398067361793}
   - component: {fileID: 2097636398067361792}
   m_Layer: 0
-  m_Name: View prajurit barong 2.1
+  m_Name: View singo barong 2.1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2486,7 +2465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097636398067361794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: 0}
+  m_LocalPosition: {x: 11, y: 4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2505,7 +2484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c387d3e32404bcc91c60318d766bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewSize: 5
+  viewSize: 3
   primaryAspectRatio: {x: 16, y: 9}
   secondaryAspectRatio: {x: 2, y: 1}
 --- !u!1 &2097636398078433520
@@ -2538,7 +2517,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2097636398078433487
 MonoBehaviour:
@@ -2636,7 +2615,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2097636398147397666
 MonoBehaviour:
@@ -2687,7 +2666,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2097636398281189097
 MonoBehaviour:
@@ -2719,7 +2698,7 @@ GameObject:
   - component: {fileID: 2097636398337877746}
   - component: {fileID: 2097636398337877745}
   m_Layer: 0
-  m_Name: View singo barong 2.1
+  m_Name: View prajurit singo barong 2.1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2733,7 +2712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097636398337877747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7, y: 2, z: 0}
+  m_LocalPosition: {x: -9, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2752,7 +2731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c387d3e32404bcc91c60318d766bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewSize: 5
+  viewSize: 4
   primaryAspectRatio: {x: 16, y: 9}
   secondaryAspectRatio: {x: 2, y: 1}
 --- !u!1 &2097636398343706982
@@ -2785,7 +2764,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2097636398343706981
 MonoBehaviour:
@@ -2885,7 +2864,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2097636398462312104
 MonoBehaviour:
@@ -3163,11 +3142,14 @@ GameObject:
   - component: {fileID: 2097636398822624031}
   - component: {fileID: 2097636398822624000}
   - component: {fileID: 2097636398822624001}
-  - component: {fileID: 2097636398822624002}
   - component: {fileID: 2097636398822624003}
   - component: {fileID: 2097636398822624004}
-  - component: {fileID: 2097636398822624005}
-  - component: {fileID: 2097636398822624006}
+  - component: {fileID: 6507305589459371113}
+  - component: {fileID: 3493203510876218998}
+  - component: {fileID: 7309767828321347709}
+  - component: {fileID: 4732018044274066272}
+  - component: {fileID: 7380610310076037241}
+  - component: {fileID: 8686610152611577375}
   m_Layer: 0
   m_Name: Flowchart cut scene 3
   m_TagString: Untagged
@@ -3203,11 +3185,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -277.79962, y: -25.951782}
+  scrollPos: {x: -275.89944, y: -25.756668}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 1
+  zoom: 0.99373263
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -3244,7 +3226,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 387.2143
     y: 79.25916
-    width: 129
+    width: 129.49825
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3253,9 +3235,12 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 2097636398822624001}
+  - {fileID: 7309767828321347709}
   - {fileID: 2097636398822624024}
+  - {fileID: 4732018044274066272}
+  - {fileID: 2097636398822624001}
   - {fileID: 2097636398822624025}
+  - {fileID: 7380610310076037241}
   - {fileID: 2097636398822624031}
   suppressAllAutoSelections: 0
 --- !u!114 &2097636398822624024
@@ -3274,7 +3259,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Setelah mendapatkan semua syarat yang diminta oleh Dewi Songgolangit,
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3299,12 +3284,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 42
   indentLevel: 0
-  storyText: 'Klono Sewandono berserta pasukannya langsung menuju Kerjaan kediri
-    untuk memperlihatkan semua yang ia dapatkan.
+  storyText: 'Klono Sewandono berserta pasukannya langsung menuju Kerajaan kediri.
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3331,7 +3315,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 393.0356
     y: 144.45178
-    width: 130
+    width: 130.50455
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3340,7 +3324,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 2097636398822624002}
+  - {fileID: 6507305589459371113}
   - {fileID: 2097636398822624028}
   - {fileID: 2097636398822624030}
   - {fileID: 2097636398822624029}
@@ -3362,7 +3346,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 388.02646
     y: 213.33456
-    width: 131
+    width: 131.51086
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3371,10 +3355,10 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 2097636398822624006}
+  - {fileID: 3493203510876218998}
   - {fileID: 2097636398822624003}
   - {fileID: 2097636398822624004}
-  - {fileID: 2097636398822624005}
+  - {fileID: 8686610152611577375}
   suppressAllAutoSelections: 0
 --- !u!114 &2097636398822624028
 MonoBehaviour:
@@ -3393,7 +3377,7 @@ MonoBehaviour:
   storyText: 'Sesampainya di Kerajaan Kediri, semua persyaratan langsung diperlihatkan
     kepada Dewi Songgolangit. '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3421,7 +3405,7 @@ MonoBehaviour:
   storyText: Sang putri terlihat bahagia melihat ada seorang lelaki yang berhasil
     memenuhi semua syarat yang ia minta.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3449,7 +3433,7 @@ MonoBehaviour:
   storyText: 'Bahkan, sang Putri bisa menyaksikan sebuah pertunjukan baru berupa
     tarian hewan berkepala dua yang diiringi oleh alat musik gamelan. '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3527,27 +3511,6 @@ MonoBehaviour:
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
---- !u!114 &2097636398822624002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097636398822624007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c952ea1ad444e479b570fa242679c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 81
-  indentLevel: 0
-  duration: 1
-  targetView: {fileID: 2097636398122359162}
-  waitUntilFinished: 1
-  targetCamera: {fileID: 0}
-  orthoSizeTweenType: 4
-  posTweenType: 4
-  rotTweenType: 4
 --- !u!114 &2097636398822624003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3565,7 +3528,7 @@ MonoBehaviour:
   storyText: Akhirnya, dengan segala perjuangan Klono Sewandono, ia berhasil menikah
     dengan Dewi Songgolangit.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3595,7 +3558,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 7781700225817144024}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3606,7 +3569,57 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &2097636398822624005
+--- !u!114 &6507305589459371113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097636398822624007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437f9a4e3dbc647f9bdce95308418bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 86
+  indentLevel: 0
+  duration: 1
+  fadeOut: 1
+  targetView: {fileID: 2097636398122359162}
+  waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
+  targetCamera: {fileID: 0}
+  fadeTweenType: 4
+  orthoSizeTweenType: 4
+  posTweenType: 4
+  rotTweenType: 4
+--- !u!114 &3493203510876218998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097636398822624007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437f9a4e3dbc647f9bdce95308418bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 87
+  indentLevel: 0
+  duration: 1
+  fadeOut: 1
+  targetView: {fileID: 2097636398779870832}
+  waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
+  targetCamera: {fileID: 0}
+  fadeTweenType: 4
+  orthoSizeTweenType: 4
+  posTweenType: 4
+  rotTweenType: 4
+--- !u!114 &7309767828321347709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3618,7 +3631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 84
+  itemId: 88
   indentLevel: 0
   _targetGameObject:
     gameObjectRef: {fileID: 0}
@@ -3627,7 +3640,7 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 1
   targetGameObjectOLD: {fileID: 0}
---- !u!114 &2097636398822624006
+--- !u!114 &4732018044274066272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3636,15 +3649,68 @@ MonoBehaviour:
   m_GameObject: {fileID: 2097636398822624007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c952ea1ad444e479b570fa242679c5, type: 3}
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 85
+  itemId: 89
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 2097636397984648648}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &7380610310076037241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097636398822624007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 90
+  indentLevel: 0
+  storyText: Ia akan menjadi satu-satunya lelaki yang berhasil memenuju semua syarat
+    sang Putri.
+  description: 
+  character: {fileID: 7781700225817144024}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &8686610152611577375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097636398822624007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437f9a4e3dbc647f9bdce95308418bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 91
   indentLevel: 0
   duration: 1
-  targetView: {fileID: 2097636398779870832}
+  fadeOut: 1
+  targetView: {fileID: 8154159860335790204}
   waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
   targetCamera: {fileID: 0}
+  fadeTweenType: 4
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
@@ -3678,7 +3744,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 22
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3370747115666538912
 SpriteRenderer:
@@ -3762,7 +3828,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3354563404042513826
 SpriteRenderer:
@@ -3854,6 +3920,8 @@ Transform:
   - {fileID: 2097636397944097360}
   - {fileID: 2097636397232492585}
   - {fileID: 2147968222809463275}
+  - {fileID: 2264462457219051666}
+  - {fileID: 7202018587497115060}
   - {fileID: 2097636398078433486}
   - {fileID: 2097636398147397665}
   - {fileID: 2097636397493528063}
@@ -3868,7 +3936,7 @@ Transform:
   - {fileID: 4594803086761031960}
   - {fileID: 7645943300957365034}
   - {fileID: 4375499959473751770}
-  - {fileID: 8582981066489737546}
+  - {fileID: 6030842073511876087}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3902,7 +3970,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 20
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7552507249022224338
 SpriteRenderer:
@@ -3956,6 +4024,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4765220261302217129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5080350177876616112}
+  - component: {fileID: 3436805273569672337}
+  m_Layer: 0
+  m_Name: View Kedua raja
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5080350177876616112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4765220261302217129}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2097636397693648320}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3436805273569672337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4765220261302217129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c387d3e32404bcc91c60318d766bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewSize: 4
+  primaryAspectRatio: {x: 16, y: 9}
+  secondaryAspectRatio: {x: 2, y: 1}
 --- !u!1 &5270879002113627325
 GameObject:
   m_ObjectHideFlags: 0
@@ -4080,7 +4195,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1811232382601529502
 SpriteRenderer:
@@ -4164,7 +4279,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
-  m_RootOrder: 23
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6837509849772953276
 SpriteRenderer:
@@ -4213,6 +4328,137 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 80.58, y: 45.11}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &6267547887605919423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2264462457219051666}
+  - component: {fileID: 8154159860335790204}
+  m_Layer: 0
+  m_Name: View Hitam
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2264462457219051666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6267547887605919423}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.8, y: -13, z: -0.19908339}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8858695839385643032}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8154159860335790204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6267547887605919423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c387d3e32404bcc91c60318d766bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewSize: 10
+  primaryAspectRatio: {x: 16, y: 9}
+  secondaryAspectRatio: {x: 2, y: 1}
+--- !u!1 &7261253130757523516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6030842073511876087}
+  - component: {fileID: 942683425917535010}
+  m_Layer: 0
+  m_Name: cut scene 2.1 22-8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6030842073511876087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261253130757523516}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 44.2987, y: -41.2, z: -0.1991}
+  m_LocalScale: {x: 0.50513583, y: 0.50513583, z: 0.50513583}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8858695839385643032}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &942683425917535010
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261253130757523516}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e46cea036969242a4958c94ff26898ad, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 80.28, y: 45.13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
