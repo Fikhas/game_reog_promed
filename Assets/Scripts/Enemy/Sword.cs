@@ -9,16 +9,19 @@ public class Sword : MonoBehaviour
 
     private void Update()
     {
-        if (isCounting)
+        if (isCounting && gameObject.GetComponent<Enemy>().currentState != EnemyState.stagger)
         {
             timer += Time.deltaTime;
         }
-        if (timer > 1)
+        if (timer > 0.5f && gameObject.GetComponent<Enemy>().currentState != EnemyState.stagger && gameObject.GetComponent<Enemy>().currentState != EnemyState.stat)
         {
             timer = 0;
             Slashing();
         }
-        // Debug.Log(isCounting);
+        if (gameObject.GetComponent<Enemy>().currentState == EnemyState.stagger && gameObject.GetComponent<Enemy>().currentState == EnemyState.stat)
+        {
+            timer = 0;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -58,46 +61,4 @@ public class Sword : MonoBehaviour
         yield return new WaitForSeconds(.3f);
         gameObject.GetComponent<Animator>().SetBool("isAttack", false);
     }
-
-
-
-
-
-
-
-
-    // private float timer;
-    // [SerializeField] float delay;
-    // [SerializeField] GameObject bullet;
-    // [SerializeField] float moveSpeed;
-
-    // private void Update()
-    // {
-    //     if (timer > delay)
-    //     {
-    //         InstantiateBullet();
-    //     }
-    //     else if (timer < delay)
-    //     {
-    //         timer += Time.deltaTime;
-
-    //     }
-    //     else
-    //     {
-    //         timer = 0;
-    //     }
-    // }
-
-    // private void InstantiateBullet()
-    // {
-    //     // GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
-    //     // if (bullet != null)
-    //     // {
-    //     //     bullet.transform.position = gameObject.transform.position;
-    //     //     bullet.transform.rotation = gameObject.transform.rotation;
-    //     //     bullet.SetActive(true);
-    //     // }
-    //     GameObject projectile = Instantiate(bullet, transform.position, transform.rotation);
-    //     projectile.GetComponent<Rigidbody2D>().velocity = transform.forward * moveSpeed;
-    // }
 }

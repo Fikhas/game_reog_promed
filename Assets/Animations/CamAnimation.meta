@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animations/CamAnimation.meta
 guid: f1b5d23b7b25a0d4bbe2d83d0e6b8b8b
+========
+guid: c4f952224fd4021488496ab77b054a90
+>>>>>>>> main:Assets/Animations/FadeOut.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

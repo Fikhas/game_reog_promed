@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
+using TMPro;
 using UnityEngine;
 
 public class KeyScript : MonoBehaviour
@@ -8,9 +10,10 @@ public class KeyScript : MonoBehaviour
     [SerializeField] GameObject buttonClue;
     [SerializeField] Item item;
     [SerializeField] Inventory playerInventory;
-    private bool isCanTake;
+    [SerializeField] GameObject key;
     private bool isTaken;
     private bool isOnArea;
+    private bool isCanTake;
 
     private void Start()
     {
@@ -19,19 +22,20 @@ public class KeyScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnArea && !isTaken)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnArea && buttonClue.activeInHierarchy && !isTaken)
         {
+            isTaken = true;
             playerInventory.AddItem(item);
             buttonClue.SetActive(false);
-            gameObject.GetComponentInChildren<DialogPopUp>().PopUpActiveWithTime(item.itemDescription, 3f);
-            isTaken = true;
-            StartCoroutine(InactiveObject());
+            gameObject.GetComponentInChildren<DialogInteractObject>().PopUpActive();
+            key.SetActive(false);
+            signalToRaise.Raise();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && isCanTake)
         {
             isOnArea = true;
             buttonClue.SetActive(true);
@@ -52,5 +56,10 @@ public class KeyScript : MonoBehaviour
         {
             signalToRaise.Raise();
         }
+    }
+
+    public void KeyIsCanTake()
+    {
+        isCanTake = true;
     }
 }

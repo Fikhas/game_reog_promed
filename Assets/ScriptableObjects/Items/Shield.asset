@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deae3538f5551a040aee7187da252b69, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 21300000, guid: 3cb7c35a750699348a04840d1ae1be5e, type: 3}
+  itemSprite: {fileID: 1521630456, guid: 3278353fe20584b40a8d913f94dad431, type: 3}
   itemDescription: This is shield
   isKey: 0
   isShield: 1
+  isGamelan: 0
+  isHorse: 0

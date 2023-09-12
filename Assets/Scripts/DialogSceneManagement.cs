@@ -27,14 +27,17 @@ public class DialogSceneManagement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (!gameObject.GetComponent<StageManagement>().isEntered)
         {
-            dialogScene.SetActive(true);
-            dialogSceneCamera.SetActive(true);
-            mainCamera.SetActive(false);
-            canvasToOff.SetActive(false);
-            dialogSceneOnSignal.Raise();
-            isRaiseOffSignal = true;
+            if (other.CompareTag("Player"))
+            {
+                dialogScene.SetActive(true);
+                dialogSceneCamera.SetActive(true);
+                mainCamera.SetActive(false);
+                canvasToOff.SetActive(false);
+                dialogSceneOnSignal.Raise();
+                isRaiseOffSignal = true;
+            }
         }
     }
 }

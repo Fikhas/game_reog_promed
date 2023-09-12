@@ -9,6 +9,12 @@ public class CutSceneStage : MonoBehaviour
     [SerializeField] Signal cutSceneOnSignal;
     [SerializeField] Signal cutSeneOffSignal;
     private bool isRaiseOffSignal;
+    private GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void Update()
     {
@@ -25,10 +31,26 @@ public class CutSceneStage : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                cutSceneToManage.SetActive(true);
-                cutSceneOnSignal.Raise();
-                isRaiseOffSignal = true;
+                if (gameObject.GetComponent<DialogSceneManagement>() == null)
+                {
+                    player.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
+                    StartCoroutine(ManualCutSceneCo(1f));
+                }
             }
         }
+    }
+
+    public void ManualCutScene()
+    {
+        player.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
+        StartCoroutine(ManualCutSceneCo(2f));
+    }
+
+    private IEnumerator ManualCutSceneCo(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        cutSceneToManage.SetActive(true);
+        cutSceneOnSignal.Raise();
+        isRaiseOffSignal = true;
     }
 }

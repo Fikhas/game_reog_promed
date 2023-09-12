@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/BarrelKnockback.cs.meta
+guid: 750c20d18a7cb97429985bab13ed737f
+========
+guid: cb3bdc3967da2274d9e8c305e95cccbc
+>>>>>>>> main:Assets/Scripts/CastleEntry.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -19,7 +19,7 @@ public class CamAnimController : MonoBehaviour
     private IEnumerator animSingoPunchCo()
     {
         camAnim.SetBool("isSingoPunch", true);
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.3f);
         camAnim.SetBool("isSingoPunch", false);
     }
 }

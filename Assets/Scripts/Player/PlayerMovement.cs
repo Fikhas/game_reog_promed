@@ -22,25 +22,24 @@ public enum PlayerFacing
 }
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer sprite;
+    [SerializeField] float speed;
+
+    public GameObject imunAnim;
     public Vector3 change;
-    public Rigidbody2D myRigidBody;
     public Animator animator;
     public PlayerState playerCurrentState;
     public FloatValue currentHealth;
-    public Signal playerHealthSignal;
     public HealthBar healthBar;
-    [SerializeField] SpriteRenderer sprite;
-    public SpawnPoint initSpawnCordinat;
     public GameObject playerDeathPanel;
     public static PlayerMovement sharedInstance;
-    // public PlayerFacing playerFacing;
-    public Vector2 playerFacing;
-    public float speed;
-    public bool isHit;
-    public float timer;
-    private float delay = 3f;
+
+    [HideInInspector] public Rigidbody2D myRigidBody;
+    [HideInInspector] public bool isHit;
+    [HideInInspector] public bool isCanAttack;
+    [HideInInspector] public float timer;
+    private float delay = 2f;
     private string color = "red";
-    private bool isCanAttack;
 
     void Start()
     {
@@ -51,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("moveY", -1);
         healthBar.SetMaxValue(currentHealth.runtimeValue);
         healthBar.SetHealth(currentHealth.runtimeValue);
-        // playerFacing = PlayerFacing.down;
     }
 
 
@@ -62,25 +60,8 @@ public class PlayerMovement : MonoBehaviour
         {
             change.x = Input.GetAxisRaw("Horizontal");
             change.y = Input.GetAxisRaw("Vertical");
-            playerFacing = new Vector2(change.x, change.y);
-            // if (change.x > 0)
-            // {
-            //     playerFacing = PlayerFacing.right;
-            // }
-            // else if (change.x < 0)
-            // {
-            //     playerFacing = PlayerFacing.left;
-            // }
-            // else if (change.y > 0)
-            // {
-            //     playerFacing = PlayerFacing.up;
-            // }
-            // else
-            // {
-            //     playerFacing = PlayerFacing.down;
-            // }
         }
-        if (Input.GetButtonDown("Attack") && !isCanAttack)
+        if (Input.GetButtonDown("Attack") && !isCanAttack && playerCurrentState != PlayerState.interact)
         {
             StartCoroutine(AttackCo());
         }
@@ -90,7 +71,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isHit && timer < delay)
         {
-            // playerCurrentState = PlayerState.hit;
             if (color == "red" && Mathf.Round(timer * 10.0f) * 0.1f % .4f != 0f)
             {
                 sprite.material.SetColor("_Color", Color.red);
@@ -108,7 +88,6 @@ public class PlayerMovement : MonoBehaviour
             isHit = false;
             timer = 0f;
             sprite.material.SetColor("_Color", Color.white);
-            // playerCurrentState = PlayerState.walk;
         }
         if (currentHealth.runtimeValue >= 100)
         {
@@ -162,12 +141,10 @@ public class PlayerMovement : MonoBehaviour
             isCanAttack = true;
             animator.SetBool("isAttack", true);
             playerCurrentState = PlayerState.attack;
-            // yield return null;
             yield return new WaitForSeconds(.3f);
             isCanAttack = false;
             animator.SetBool("isAttack", false);
             playerCurrentState = PlayerState.walk;
-            // currentState = PlayerState.walk;
         }
     }
 
@@ -198,20 +175,6 @@ public class PlayerMovement : MonoBehaviour
         // sprite.material.SetColor("_Color", Color.white);
     }
 
-    public void SetPlayerSpawn()
-    {
-        playerDeathPanel.SetActive(false);
-        Time.timeScale = 1;
-        playerCurrentState = PlayerState.idle;
-        sprite.material.SetColor("_Color", Color.white);
-        gameObject.SetActive(true);
-        currentHealth.runtimeValue = currentHealth.initialValue;
-        healthBar.SetMaxValue(currentHealth.runtimeValue);
-        gameObject.transform.position = initSpawnCordinat.runtimeSpawnCordinat;
-        timer = 0;
-        isHit = false;
-    }
-
     public void SetPlayerToStagger()
     {
         playerCurrentState = PlayerState.stagger;
@@ -225,5 +188,17 @@ public class PlayerMovement : MonoBehaviour
     public void SetPlayerToIdle()
     {
         playerCurrentState = PlayerState.idle;
+    }
+
+    public void ImunEffectAtive()
+    {
+        StartCoroutine(ImunActiveCo());
+    }
+
+    private IEnumerator ImunActiveCo()
+    {
+        Instantiate(imunAnim, this.transform, worldPositionStays: false);
+        yield return new WaitForSeconds(3f);
+        Destroy(GameObject.FindGameObjectWithTag("ImunAnim"));
     }
 }

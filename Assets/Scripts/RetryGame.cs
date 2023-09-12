@@ -27,13 +27,14 @@ public class RetryGame : MonoBehaviour
             isThereEnemy.ManualSpawnEnemy();
         }
         PlayerMovement.sharedInstance.transform.position = currentStage.GetComponent<StageManagement>().spawnPosition;
-        PlayerMovement.sharedInstance.currentHealth.runtimeValue = 10;
+        PlayerMovement.sharedInstance.currentHealth.runtimeValue = 100;
         PlayerMovement.sharedInstance.animator.SetFloat("moveX", 0);
         PlayerMovement.sharedInstance.animator.SetFloat("moveY", -1);
         PlayerMovement.sharedInstance.healthBar.SetMaxValue(PlayerMovement.sharedInstance.currentHealth.runtimeValue);
         PlayerMovement.sharedInstance.healthBar.SetHealth(PlayerMovement.sharedInstance.currentHealth.runtimeValue);
         PlayerMovement.sharedInstance.playerDeathPanel.SetActive(false);
         PlayerMovement.sharedInstance.playerCurrentState = PlayerState.idle;
+        PlayerMovement.sharedInstance.isCanAttack = false;
         PlayerMovement.sharedInstance.isHit = false;
         PlayerMovement.sharedInstance.myRigidBody = player.GetComponent<Rigidbody2D>();
         PlayerMovement.sharedInstance.timer = 0;

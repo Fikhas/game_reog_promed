@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5300042507815385343}
-  - component: {fileID: 3131076697514014401}
+  - component: {fileID: 6602768859618122624}
   m_Layer: 0
   m_Name: DialogPopUp
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3131076697514014401
+--- !u!114 &6602768859618122624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,4 +48,4 @@ MonoBehaviour:
   dialogBox: {fileID: 0}
   dialogSignalOff: {fileID: 11400000, guid: 53a4a42fb79e5e74fa402a4eb382b5a6, type: 2}
   dialogSignalOn: {fileID: 11400000, guid: e691b3a1075858f4e8f291e482f9557e, type: 2}
-  playerToFreeze: {fileID: 0}
+  playerToFreeze: {fileID: 5080068854466432113, guid: 0ac7046f0bd24084c970f05514922811, type: 3}
