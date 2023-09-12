@@ -78,5 +78,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 6
   knockTime: 0
-  damage: 0
+  damage: 15
   singoPunchSignal: {fileID: 11400000, guid: d975ee99e28b31e4f9e3a43d5e47bd8c, type: 2}

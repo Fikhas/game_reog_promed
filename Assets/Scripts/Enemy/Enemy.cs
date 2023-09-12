@@ -7,7 +7,8 @@ public enum EnemyState
     idle,
     walk,
     attack,
-    stagger
+    stagger,
+    stat
 }
 
 public class Enemy : MonoBehaviour
@@ -15,27 +16,25 @@ public class Enemy : MonoBehaviour
     public EnemyState currentState;
     public HealthBar healthBar;
     private SpriteRenderer sprite;
-    public Signal deathSignal;
-    public static Enemy sharedInstance;
     public float health;
-    public string enemyName;
-    public bool isHit;
     private float timer;
     private float delay = 3f;
     private string color = "red";
+
+    [HideInInspector]
+    public Signal deathSignal;
+    public bool isHit;
 
     void Awake()
     {
         healthBar.SetMaxValue(health);
         sprite = GetComponent<SpriteRenderer>();
-        sharedInstance = this;
     }
 
     void Update()
     {
         if (isHit && timer < delay)
         {
-            // playerCurrentState = PlayerState.hit;
             if (color == "red" && Mathf.Round(timer * 10.0f) * 0.1f % .4f != 0f)
             {
                 sprite.material.SetColor("_Color", Color.red);
@@ -53,7 +52,6 @@ public class Enemy : MonoBehaviour
             isHit = false;
             timer = 0f;
             sprite.material.SetColor("_Color", Color.white);
-            // playerCurrentState = PlayerState.walk;
         }
     }
 

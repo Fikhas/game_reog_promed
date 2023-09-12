@@ -6,7 +6,9 @@ using UnityEngine;
 public class StageManagement : MonoBehaviour
 {
     public Vector3 spawnPosition;
-    // [HideInInspector]
+    [SerializeField] Signal singoThrowSignal;
+
+    [HideInInspector]
     public bool isEntered;
 
     private void OnTriggerEnter2D(Collider2D other)

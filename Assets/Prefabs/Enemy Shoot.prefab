@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 356184414679843461}
   - component: {fileID: 356184414679843463}
   - component: {fileID: 356184414679843462}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 356184414908692093}
   - component: {fileID: 356184414908692094}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 356184415370161412}
   - component: {fileID: 356184415370161411}
   - component: {fileID: 356184415370161410}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,9 +249,9 @@ GameObject:
   - component: {fileID: 356184415679952184}
   - component: {fileID: 356184415679952185}
   - component: {fileID: 356184415679952183}
-  - component: {fileID: 356184415679952182}
   - component: {fileID: 356184415679952181}
-  m_Layer: 0
+  - component: {fileID: 5432640489823806404}
+  m_Layer: 7
   m_Name: Enemy Shoot
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -272,6 +272,7 @@ Transform:
   m_Children:
   - {fileID: 356184414908692093}
   - {fileID: 356184415370161409}
+  - {fileID: 9008496541737905164}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -316,7 +317,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -714440129, guid: 9e9214d156fdd144faa0e999967132e8, type: 3}
+  m_Sprite: {fileID: -1716061242, guid: a7c4cf762d2d3bb42a8842516021857e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -337,7 +338,7 @@ Animator:
   m_GameObject: {fileID: 356184415679952163}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c168fed7e7d52e34f8138477af5bc146, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4491d96fa7697e247ad71adf43023ecc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -385,7 +386,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.75, y: 1.875}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -407,33 +408,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  health: 4
-  enemyName: Shoot Enemy
-  baseAttack: 1
-  moveSpeed: 3
   healthBar: {fileID: 356184416624840168}
-  currentEnemy: {fileID: 356184415679952163}
-  isHit: 0
+  health: 4
   deathSignal: {fileID: 0}
-  chaseRadius: 4
-  attackRadius: 2
-  homePosition: {fileID: 0}
-  anim: {fileID: 356184415679952166}
---- !u!114 &356184415679952182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356184415679952163}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 611b373bff8157848ab4d3d6f74628bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObjects: []
-  objectToPool: {fileID: 8883150706843359860, guid: 45fa8f12eeee35545a560d671da5badd, type: 3}
-  amountToPool: 10
+  isHit: 0
 --- !u!114 &356184415679952181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,6 +426,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8883150706843359860, guid: 45fa8f12eeee35545a560d671da5badd, type: 3}
   bulletPos: {fileID: 356184415679952164}
+--- !u!114 &5432640489823806404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356184415679952163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded6b9269a366aa45b964b322821363d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRigidBody: {fileID: 0}
+  target: {fileID: 0}
+  anim: {fileID: 0}
+  moveSpeed: 3
+  chaseRadius: 4
+  attackRadius: 2
 --- !u!1 &356184416261699608
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +455,7 @@ GameObject:
   - component: {fileID: 356184416261699609}
   - component: {fileID: 356184416261699611}
   - component: {fileID: 356184416261699610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +531,7 @@ GameObject:
   - component: {fileID: 356184416624840170}
   - component: {fileID: 356184416624840168}
   - component: {fileID: 356184416624840169}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,3 +624,34 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &8573731670779101964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9008496541737905164}
+  m_Layer: 7
+  m_Name: BulletPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9008496541737905164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573731670779101964}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.037, y: -0.216, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 356184415679952164}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

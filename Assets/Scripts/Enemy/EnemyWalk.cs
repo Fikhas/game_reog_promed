@@ -18,6 +18,7 @@ public class EnemyWalk : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.SetFloat("moveX", 0);
         anim.SetFloat("moveY", -1);
+        anim.SetBool("isWalking", false);
     }
 
     private void FixedUpdate()
@@ -27,31 +28,34 @@ public class EnemyWalk : MonoBehaviour
 
     public void CheckDistance()
     {
-        if (Vector3.Distance(target.transform.position, transform.position) <= attackRadius)
+        if (gameObject.GetComponent<Enemy>().currentState != EnemyState.stat)
         {
-            if (gameObject.GetComponent<Enemy>().currentState != EnemyState.stagger)
+            if (Vector3.Distance(target.transform.position, transform.position) <= attackRadius)
             {
-                Vector3 temp = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+                if (gameObject.GetComponent<Enemy>().currentState != EnemyState.stagger && gameObject.GetComponent<Enemy>().currentState != EnemyState.stat)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+                    ChangeState(EnemyState.idle);
+                    anim.SetBool("isWalking", false);
+                    ChangeAnimate(temp - transform.position);
+                }
+            }
+            else if (Vector3.Distance(target.transform.position, transform.position) <= chaseRadius && Vector3.Distance(target.transform.position, transform.position) > attackRadius)
+            {
+                if (gameObject.GetComponent<Enemy>().currentState == EnemyState.idle || gameObject.GetComponent<Enemy>().currentState == EnemyState.walk && gameObject.GetComponent<Enemy>().currentState != EnemyState.stat)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+                    anim.SetBool("isWalking", true);
+                    myRigidBody.MovePosition(temp);
+                    ChangeAnimate(temp - transform.position);
+                    ChangeState(EnemyState.walk);
+                }
+            }
+            else if (Vector3.Distance(target.transform.position, transform.position) > chaseRadius && gameObject.GetComponent<Enemy>().currentState != EnemyState.stagger && gameObject.GetComponent<Enemy>().currentState != EnemyState.stat)
+            {
                 ChangeState(EnemyState.idle);
                 anim.SetBool("isWalking", false);
-                ChangeAnimate(temp - transform.position);
             }
-        }
-        else if (Vector3.Distance(target.transform.position, transform.position) <= chaseRadius && Vector3.Distance(target.transform.position, transform.position) > attackRadius)
-        {
-            if (gameObject.GetComponent<Enemy>().currentState == EnemyState.idle || gameObject.GetComponent<Enemy>().currentState == EnemyState.walk)
-            {
-                Vector3 temp = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
-                anim.SetBool("isWalking", true);
-                myRigidBody.MovePosition(temp);
-                ChangeAnimate(temp - transform.position);
-                ChangeState(EnemyState.walk);
-            }
-        }
-        else if (Vector3.Distance(target.transform.position, transform.position) > chaseRadius && gameObject.GetComponent<Enemy>().currentState != EnemyState.stagger)
-        {
-            ChangeState(EnemyState.idle);
-            anim.SetBool("isWalking", false);
         }
     }
 
@@ -93,5 +97,16 @@ public class EnemyWalk : MonoBehaviour
         {
             gameObject.GetComponent<Enemy>().currentState = newState;
         }
+    }
+
+    public void EnemyStateToStagger()
+    {
+        gameObject.GetComponent<Enemy>().currentState = EnemyState.stagger;
+        anim.SetBool("isWalking", false);
+    }
+
+    public void EnemyStateToIdle()
+    {
+        gameObject.GetComponent<Enemy>().currentState = EnemyState.idle;
     }
 }
