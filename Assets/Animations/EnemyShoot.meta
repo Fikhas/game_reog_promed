@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animations/EnemyShoot.meta
 guid: 1674998bc1d934b4caddcec50a1a573d
+========
+guid: ce092297ef5e3984aa92ad51cfa3a45c
+>>>>>>>> main:Assets/Animations/FadeInFadeOut.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
