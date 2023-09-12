@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2720810779141569385}
   - component: {fileID: 227719828228849315}
   - component: {fileID: 1938877450628662461}
+  - component: {fileID: 2468677612096436590}
+  - component: {fileID: 1139701355742338590}
   m_Layer: 0
   m_Name: Flowchart - Stage 4
   m_TagString: Untagged
@@ -86,7 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 67
+    x: 68
     y: 70
     width: 145
     height: 40
@@ -95,9 +97,10 @@ MonoBehaviour:
   itemId: 0
   blockName: Abis msk stage 4
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 1139701355742338590}
   commandList:
   - {fileID: 1938877450628662461}
+  - {fileID: 2468677612096436590}
   suppressAllAutoSelections: 0
 --- !u!114 &1938877450628662461
 MonoBehaviour:
@@ -126,6 +129,42 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &2468677612096436590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36342611215891545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 36342611215891545}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &1139701355742338590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36342611215891545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 227719828228849315}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
 --- !u!1 &49811708764507389
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +228,8 @@ GameObject:
   - component: {fileID: 4770667960371682177}
   - component: {fileID: 2780428010929435143}
   - component: {fileID: 1418632859980984736}
+  - component: {fileID: 1716702769878889231}
+  - component: {fileID: 1076371275895983806}
   m_Layer: 0
   m_Name: Flowchart - Stage 6
   m_TagString: Untagged
@@ -237,8 +278,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 2780428010929435143}
-  selectedCommands:
-  - {fileID: 1418632859980984736}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -273,9 +313,10 @@ MonoBehaviour:
   itemId: 0
   blockName: Abis msk stage 6
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 1076371275895983806}
   commandList:
   - {fileID: 1418632859980984736}
+  - {fileID: 1716702769878889231}
   suppressAllAutoSelections: 0
 --- !u!114 &1418632859980984736
 MonoBehaviour:
@@ -304,6 +345,42 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &1716702769878889231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83179166361012573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 83179166361012573}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &1076371275895983806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83179166361012573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 2780428010929435143}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
 --- !u!1 &227698015989165291
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +392,9 @@ GameObject:
   - component: {fileID: 4854008217464648749}
   - component: {fileID: 6211578505488016548}
   - component: {fileID: 3377191513310529507}
-  - component: {fileID: 3903227351154871604}
+  - component: {fileID: 6639736499683914869}
+  - component: {fileID: 7049910263097495427}
+  - component: {fileID: 8067147374453258548}
   m_Layer: 0
   m_Name: Flowchart - Stage 3
   m_TagString: Untagged
@@ -365,7 +444,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 3377191513310529507}
   selectedCommands:
-  - {fileID: 3903227351154871604}
+  - {fileID: 8067147374453258548}
   variables: []
   description: 
   stepPause: 0
@@ -400,11 +479,48 @@ MonoBehaviour:
   itemId: 0
   blockName: Abis msk stage 3
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 7049910263097495427}
   commandList:
-  - {fileID: 3903227351154871604}
+  - {fileID: 8067147374453258548}
+  - {fileID: 6639736499683914869}
   suppressAllAutoSelections: 0
---- !u!114 &3903227351154871604
+--- !u!114 &6639736499683914869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227698015989165291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 227698015989165291}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &7049910263097495427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227698015989165291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 3377191513310529507}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
+--- !u!114 &8067147374453258548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -416,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 1
+  itemId: 3
   indentLevel: 0
   storyText: Kamu harus mengalahkan musuh dan mendapatkan alat musik sebagai pertunjukan
     baru yang diinginkan sang Putri.
@@ -444,6 +560,8 @@ GameObject:
   - component: {fileID: 6200413053083335800}
   - component: {fileID: 5164860181132659359}
   - component: {fileID: 7968628920848214430}
+  - component: {fileID: 4444184300082852815}
+  - component: {fileID: 9168596673857565704}
   m_Layer: 0
   m_Name: Flowchart - Stage 2
   m_TagString: Untagged
@@ -492,8 +610,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 5164860181132659359}
-  selectedCommands:
-  - {fileID: 7968628920848214430}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -528,9 +645,10 @@ MonoBehaviour:
   itemId: 0
   blockName: abis msk stage 2
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 9168596673857565704}
   commandList:
   - {fileID: 7968628920848214430}
+  - {fileID: 4444184300082852815}
   suppressAllAutoSelections: 0
 --- !u!114 &7968628920848214430
 MonoBehaviour:
@@ -559,6 +677,42 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &4444184300082852815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254226779460255206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 254226779460255206}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &9168596673857565704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254226779460255206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 5164860181132659359}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
 --- !u!1 &1055825187632193452
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +725,8 @@ GameObject:
   - component: {fileID: 4180771584272181769}
   - component: {fileID: 1073583661816858347}
   - component: {fileID: 7851807732699605090}
+  - component: {fileID: 6669545770802074178}
+  - component: {fileID: 2640569086989771334}
   m_Layer: 0
   m_Name: Flowchart - Stage 7
   m_TagString: Untagged
@@ -619,8 +775,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1073583661816858347}
-  selectedCommands:
-  - {fileID: 7851807732699605090}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -655,9 +810,10 @@ MonoBehaviour:
   itemId: 0
   blockName: Abis msk stage 7
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 2640569086989771334}
   commandList:
   - {fileID: 7851807732699605090}
+  - {fileID: 6669545770802074178}
   suppressAllAutoSelections: 0
 --- !u!114 &7851807732699605090
 MonoBehaviour:
@@ -686,6 +842,42 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &6669545770802074178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055825187632193452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 1055825187632193452}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &2640569086989771334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055825187632193452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1073583661816858347}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
 --- !u!1 &1911439672050515531
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +890,8 @@ GameObject:
   - component: {fileID: 5275051219135486697}
   - component: {fileID: 7846333196345470015}
   - component: {fileID: 3859713759700329691}
+  - component: {fileID: 2096778776151344013}
+  - component: {fileID: 8000620475179203797}
   m_Layer: 0
   m_Name: Flowchart - Stage 5
   m_TagString: Untagged
@@ -781,9 +975,10 @@ MonoBehaviour:
   itemId: 0
   blockName: Abis msk stage 5
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 8000620475179203797}
   commandList:
   - {fileID: 3859713759700329691}
+  - {fileID: 2096778776151344013}
   suppressAllAutoSelections: 0
 --- !u!114 &3859713759700329691
 MonoBehaviour:
@@ -812,6 +1007,42 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &2096778776151344013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911439672050515531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 3
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 1911439672050515531}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &8000620475179203797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911439672050515531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 7846333196345470015}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
 --- !u!1 &4271690557444479772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,7 +1407,9 @@ GameObject:
   - component: {fileID: 5780023432061898900}
   - component: {fileID: 2784253372847909267}
   - component: {fileID: 269409824504655197}
-  - component: {fileID: 5819788715619562541}
+  - component: {fileID: 3910029636731104685}
+  - component: {fileID: 3314253616078265634}
+  - component: {fileID: 5978037523124877619}
   m_Layer: 0
   m_Name: Flowchart - Stage 1
   m_TagString: Untagged
@@ -1225,7 +1458,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 2784253372847909267}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 5978037523124877619}
   variables: []
   description: 
   stepPause: 0
@@ -1260,9 +1494,11 @@ MonoBehaviour:
   itemId: 0
   blockName: Monolog dulu
   description: 
-  eventHandler: {fileID: 5819788715619562541}
+  eventHandler: {fileID: 3314253616078265634}
   commandList:
   - {fileID: 269409824504655197}
+  - {fileID: 5978037523124877619}
+  - {fileID: 3910029636731104685}
   suppressAllAutoSelections: 0
 --- !u!114 &269409824504655197
 MonoBehaviour:
@@ -1278,13 +1514,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: 'Saat ini, kamu harus menjelajahi setiap sisi hutan untuk mendapatkan
-    tiga kuda kembar dan satu alat musik!
+  storyText: 'Sekarang, kamu harus menjelajahi setiap sisi hutan untuk mencari tiga
+    kuda kembar dan satu alat musik!
 
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 2183515619373341069}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1295,7 +1531,28 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &5819788715619562541
+--- !u!114 &3910029636731104685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734731265817519652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 7734731265817519652}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &3314253616078265634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1310,6 +1567,34 @@ MonoBehaviour:
   parentBlock: {fileID: 2784253372847909267}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+--- !u!114 &5978037523124877619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734731265817519652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 3
+  indentLevel: 0
+  storyText: Baiklah, aku menjelajahi setiap sisi hutan demi mendapatkan syarat yang
+    diminta oleh sang Putri.
+  description: 
+  character: {fileID: 7424812815569481220}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &8291428750584606249
 GameObject:
   m_ObjectHideFlags: 0
