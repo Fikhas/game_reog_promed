@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 2720810779141569385}
   - component: {fileID: 227719828228849315}
   - component: {fileID: 1938877450628662461}
+<<<<<<< HEAD
   - component: {fileID: 2468677612096436590}
   - component: {fileID: 1139701355742338590}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 4
   m_TagString: Untagged
@@ -75,11 +78,70 @@ MonoBehaviour:
   luaEnvironment: {fileID: 0}
   luaBindingName: flowchart
 --- !u!114 &227719828228849315
+<<<<<<< HEAD
+MonoBehaviour:
+=======
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36342611215891545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 67
+    y: 70
+    width: 145
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 0
+  blockName: Abis msk stage 4
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1938877450628662461}
+  suppressAllAutoSelections: 0
+--- !u!114 &1938877450628662461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36342611215891545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1
+  indentLevel: 0
+  storyText: Sekarang, kamu bisa mengambil setiap item yang tersebar di hutan ini.
+  description: 
+  character: {fileID: 2183515619373341069}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!1 &49811708764507389
+GameObject:
+>>>>>>> main
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 36342611215891545}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -171,6 +233,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> main
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5126636275180672304}
@@ -228,8 +292,11 @@ GameObject:
   - component: {fileID: 4770667960371682177}
   - component: {fileID: 2780428010929435143}
   - component: {fileID: 1418632859980984736}
+<<<<<<< HEAD
   - component: {fileID: 1716702769878889231}
   - component: {fileID: 1076371275895983806}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 6
   m_TagString: Untagged
@@ -278,7 +345,12 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 2780428010929435143}
+<<<<<<< HEAD
   selectedCommands: []
+=======
+  selectedCommands:
+  - {fileID: 1418632859980984736}
+>>>>>>> main
   variables: []
   description: 
   stepPause: 0
@@ -313,10 +385,16 @@ MonoBehaviour:
   itemId: 0
   blockName: Abis msk stage 6
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 1076371275895983806}
   commandList:
   - {fileID: 1418632859980984736}
   - {fileID: 1716702769878889231}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1418632859980984736}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &1418632859980984736
 MonoBehaviour:
@@ -345,6 +423,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &1716702769878889231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +460,8 @@ MonoBehaviour:
   parentBlock: {fileID: 2780428010929435143}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &227698015989165291
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,9 +473,13 @@ GameObject:
   - component: {fileID: 4854008217464648749}
   - component: {fileID: 6211578505488016548}
   - component: {fileID: 3377191513310529507}
+<<<<<<< HEAD
   - component: {fileID: 6639736499683914869}
   - component: {fileID: 7049910263097495427}
   - component: {fileID: 8067147374453258548}
+=======
+  - component: {fileID: 3903227351154871604}
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 3
   m_TagString: Untagged
@@ -444,7 +529,11 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 3377191513310529507}
   selectedCommands:
+<<<<<<< HEAD
   - {fileID: 8067147374453258548}
+=======
+  - {fileID: 3903227351154871604}
+>>>>>>> main
   variables: []
   description: 
   stepPause: 0
@@ -479,6 +568,7 @@ MonoBehaviour:
   itemId: 0
   blockName: Abis msk stage 3
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 7049910263097495427}
   commandList:
   - {fileID: 8067147374453258548}
@@ -521,6 +611,13 @@ MonoBehaviour:
   suppressBlockAutoSelect: 0
   waitForFrames: 1
 --- !u!114 &8067147374453258548
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 3903227351154871604}
+  suppressAllAutoSelections: 0
+--- !u!114 &3903227351154871604
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -532,7 +629,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   itemId: 3
+=======
+  itemId: 1
+>>>>>>> main
   indentLevel: 0
   storyText: Kamu harus mengalahkan musuh dan mendapatkan alat musik sebagai pertunjukan
     baru yang diinginkan sang Putri.
@@ -560,8 +661,11 @@ GameObject:
   - component: {fileID: 6200413053083335800}
   - component: {fileID: 5164860181132659359}
   - component: {fileID: 7968628920848214430}
+<<<<<<< HEAD
   - component: {fileID: 4444184300082852815}
   - component: {fileID: 9168596673857565704}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 2
   m_TagString: Untagged
@@ -610,7 +714,12 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 5164860181132659359}
+<<<<<<< HEAD
   selectedCommands: []
+=======
+  selectedCommands:
+  - {fileID: 7968628920848214430}
+>>>>>>> main
   variables: []
   description: 
   stepPause: 0
@@ -645,10 +754,16 @@ MonoBehaviour:
   itemId: 0
   blockName: abis msk stage 2
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 9168596673857565704}
   commandList:
   - {fileID: 7968628920848214430}
   - {fileID: 4444184300082852815}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7968628920848214430}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &7968628920848214430
 MonoBehaviour:
@@ -677,6 +792,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &4444184300082852815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,6 +829,8 @@ MonoBehaviour:
   parentBlock: {fileID: 5164860181132659359}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &1055825187632193452
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,8 +843,11 @@ GameObject:
   - component: {fileID: 4180771584272181769}
   - component: {fileID: 1073583661816858347}
   - component: {fileID: 7851807732699605090}
+<<<<<<< HEAD
   - component: {fileID: 6669545770802074178}
   - component: {fileID: 2640569086989771334}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 7
   m_TagString: Untagged
@@ -775,7 +896,12 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1073583661816858347}
+<<<<<<< HEAD
   selectedCommands: []
+=======
+  selectedCommands:
+  - {fileID: 7851807732699605090}
+>>>>>>> main
   variables: []
   description: 
   stepPause: 0
@@ -810,10 +936,16 @@ MonoBehaviour:
   itemId: 0
   blockName: Abis msk stage 7
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 2640569086989771334}
   commandList:
   - {fileID: 7851807732699605090}
   - {fileID: 6669545770802074178}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7851807732699605090}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &7851807732699605090
 MonoBehaviour:
@@ -842,6 +974,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &6669545770802074178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,6 +1011,8 @@ MonoBehaviour:
   parentBlock: {fileID: 1073583661816858347}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &1911439672050515531
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,8 +1025,11 @@ GameObject:
   - component: {fileID: 5275051219135486697}
   - component: {fileID: 7846333196345470015}
   - component: {fileID: 3859713759700329691}
+<<<<<<< HEAD
   - component: {fileID: 2096778776151344013}
   - component: {fileID: 8000620475179203797}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 5
   m_TagString: Untagged
@@ -975,10 +1113,16 @@ MonoBehaviour:
   itemId: 0
   blockName: Abis msk stage 5
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 8000620475179203797}
   commandList:
   - {fileID: 3859713759700329691}
   - {fileID: 2096778776151344013}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 3859713759700329691}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &3859713759700329691
 MonoBehaviour:
@@ -1007,6 +1151,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &2096778776151344013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,6 +1188,8 @@ MonoBehaviour:
   parentBlock: {fileID: 7846333196345470015}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &4271690557444479772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,9 +1554,13 @@ GameObject:
   - component: {fileID: 5780023432061898900}
   - component: {fileID: 2784253372847909267}
   - component: {fileID: 269409824504655197}
+<<<<<<< HEAD
   - component: {fileID: 3910029636731104685}
   - component: {fileID: 3314253616078265634}
   - component: {fileID: 5978037523124877619}
+=======
+  - component: {fileID: 5819788715619562541}
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 1
   m_TagString: Untagged
@@ -1458,8 +1609,12 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 2784253372847909267}
+<<<<<<< HEAD
   selectedCommands:
   - {fileID: 5978037523124877619}
+=======
+  selectedCommands: []
+>>>>>>> main
   variables: []
   description: 
   stepPause: 0
@@ -1494,11 +1649,17 @@ MonoBehaviour:
   itemId: 0
   blockName: Monolog dulu
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 3314253616078265634}
   commandList:
   - {fileID: 269409824504655197}
   - {fileID: 5978037523124877619}
   - {fileID: 3910029636731104685}
+=======
+  eventHandler: {fileID: 5819788715619562541}
+  commandList:
+  - {fileID: 269409824504655197}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &269409824504655197
 MonoBehaviour:
@@ -1514,13 +1675,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
+<<<<<<< HEAD
   storyText: 'Sekarang, kamu harus menjelajahi setiap sisi hutan untuk mencari tiga
     kuda kembar dan satu alat musik!
+=======
+  storyText: 'Saat ini, kamu harus menjelajahi setiap sisi hutan untuk mendapatkan
+    tiga kuda kembar dan satu alat musik!
+>>>>>>> main
 
 
 '
   description: 
+<<<<<<< HEAD
   character: {fileID: 2183515619373341069}
+=======
+  character: {fileID: 0}
+>>>>>>> main
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1531,6 +1701,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &3910029636731104685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,6 +1724,9 @@ MonoBehaviour:
     booleanVal: 0
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &3314253616078265634
+=======
+--- !u!114 &5819788715619562541
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1567,6 +1741,7 @@ MonoBehaviour:
   parentBlock: {fileID: 2784253372847909267}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+<<<<<<< HEAD
 --- !u!114 &5978037523124877619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,6 +1770,8 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!1 &8291428750584606249
 GameObject:
   m_ObjectHideFlags: 0

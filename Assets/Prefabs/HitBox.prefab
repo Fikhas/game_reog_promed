@@ -77,6 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e7b866cb0c54d43b6d003ac859df34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 10
-  knockTime: 0.2
+  thrust: 4
+  knockTime: 0.3
   damage: 10

@@ -12,6 +12,12 @@ TagManager:
   - EnemySword
   - EnemyBody
   - PanelMainMenu
+  - Horse
+  - PlaceItem
+  - SingoBarong
+  - ImunAnim
+  - BarrelDrop
+  - BarrelClue
   layers:
   - Default
   - TransparentFX
@@ -22,8 +28,8 @@ TagManager:
   - Player
   - Enemy
   - Cut Scene
-  - 
-  - 
+  - Smoke
+  - Singo Barong
   - 
   - 
   - 
@@ -66,4 +72,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1273924423
+    locked: 0
+  - name: Smoke
+    uniqueID: 2330899621
     locked: 0

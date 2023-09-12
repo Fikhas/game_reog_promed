@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletDamage : MonoBehaviour
+public class BulletDamage : Knockback
 {
-    [SerializeField] float thrust;
-    [SerializeField] float knockTime;
-    [SerializeField] float damage;
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

@@ -135,8 +135,11 @@ GameObject:
   - component: {fileID: 2097636397243746002}
   - component: {fileID: 7112378579444131206}
   - component: {fileID: 3901794767101426802}
+<<<<<<< HEAD
   - component: {fileID: 997162541992004854}
   - component: {fileID: 5372561991280063930}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart cut scene 2
   m_TagString: Untagged
@@ -220,7 +223,11 @@ MonoBehaviour:
   itemId: 21
   blockName: Cut Scene 2.1
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 5372561991280063930}
+=======
+  eventHandler: {fileID: 0}
+>>>>>>> main
   commandList:
   - {fileID: 2097636397243745961}
   - {fileID: 2097636397243745980}
@@ -413,7 +420,10 @@ MonoBehaviour:
   - {fileID: 2097636397243745966}
   - {fileID: 2097636397243745959}
   - {fileID: 3901794767101426802}
+<<<<<<< HEAD
   - {fileID: 997162541992004854}
+=======
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &2097636397243745954
 MonoBehaviour:
@@ -854,6 +864,7 @@ MonoBehaviour:
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
+<<<<<<< HEAD
 --- !u!114 &997162541992004854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,6 +901,8 @@ MonoBehaviour:
   parentBlock: {fileID: 2097636397243745979}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &2097636397438275176
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,9 +996,12 @@ GameObject:
   - component: {fileID: 8453724522236342293}
   - component: {fileID: 806270510142613645}
   - component: {fileID: 2723774015579454556}
+<<<<<<< HEAD
   - component: {fileID: 3734043273481516995}
   - component: {fileID: 946912557289944361}
   - component: {fileID: 2397073215523436766}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart cut scene 1
   m_TagString: Untagged
@@ -1021,11 +1037,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
+<<<<<<< HEAD
   scrollPos: {x: -117.13592, y: 10.493168}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
   zoom: 0.91236496
+=======
+  scrollPos: {x: -12.042531, y: 11.328056}
+  variablesScrollPos: {x: 0, y: 0}
+  variablesExpanded: 1
+  blockViewHeight: 400
+  zoom: 0.8058879
+>>>>>>> main
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1062,7 +1086,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 66
     y: 68.59594
+<<<<<<< HEAD
     width: 126.72369
+=======
+    width: 126.93378
+>>>>>>> main
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1212,7 +1240,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 69.68409
     y: 139.92667
+<<<<<<< HEAD
     width: 127.81973
+=======
+    width: 127.554214
+>>>>>>> main
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1380,7 +1412,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 71.72892
     y: 216.35637
+<<<<<<< HEAD
     width: 128.91579
+=======
+    width: 128.79507
+>>>>>>> main
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1397,7 +1433,10 @@ MonoBehaviour:
   - {fileID: 2097636397478444219}
   - {fileID: 2097636397478444217}
   - {fileID: 2097636397478444169}
+<<<<<<< HEAD
   - {fileID: 2397073215523436766}
+=======
+>>>>>>> main
   - {fileID: 806270510142613645}
   - {fileID: 2097636397478444168}
   - {fileID: 2723774015579454556}
@@ -1987,6 +2026,7 @@ MonoBehaviour:
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
+<<<<<<< HEAD
 --- !u!114 &3734043273481516995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2050,6 +2090,8 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!1 &2097636397493528033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3256,8 +3298,11 @@ GameObject:
   - component: {fileID: 4732018044274066272}
   - component: {fileID: 7380610310076037241}
   - component: {fileID: 8686610152611577375}
+<<<<<<< HEAD
   - component: {fileID: 5987603579831617307}
   - component: {fileID: 3296635036165064604}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart cut scene 3
   m_TagString: Untagged
@@ -3467,7 +3512,10 @@ MonoBehaviour:
   - {fileID: 2097636398822624003}
   - {fileID: 2097636398822624004}
   - {fileID: 8686610152611577375}
+<<<<<<< HEAD
   - {fileID: 5987603579831617307}
+=======
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &2097636398822624028
 MonoBehaviour:
@@ -4164,8 +4212,13 @@ Transform:
   - {fileID: 5462360087776423145}
   - {fileID: 4594803086761031960}
   - {fileID: 7645943300957365034}
+<<<<<<< HEAD
   - {fileID: 6030842073511876087}
   - {fileID: 2235206857373634600}
+=======
+  - {fileID: 4375499959473751770}
+  - {fileID: 6030842073511876087}
+>>>>>>> main
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4508,7 +4561,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
+<<<<<<< HEAD
   m_RootOrder: 10
+=======
+  m_RootOrder: 25
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8154159860335790204
 MonoBehaviour:
@@ -4556,6 +4613,137 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8858695839385643032}
   m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &942683425917535010
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261253130757523516}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e46cea036969242a4958c94ff26898ad, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 80.28, y: 45.13}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &6267547887605919423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2264462457219051666}
+  - component: {fileID: 8154159860335790204}
+  m_Layer: 0
+  m_Name: View Hitam
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2264462457219051666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6267547887605919423}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.8, y: -13, z: -0.19908339}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8858695839385643032}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8154159860335790204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6267547887605919423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c387d3e32404bcc91c60318d766bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewSize: 10
+  primaryAspectRatio: {x: 16, y: 9}
+  secondaryAspectRatio: {x: 2, y: 1}
+--- !u!1 &7261253130757523516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6030842073511876087}
+  - component: {fileID: 942683425917535010}
+  m_Layer: 0
+  m_Name: cut scene 2.1 22-8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6030842073511876087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261253130757523516}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 44.2987, y: -41.2, z: -0.1991}
+  m_LocalScale: {x: 0.50513583, y: 0.50513583, z: 0.50513583}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8858695839385643032}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &942683425917535010
 SpriteRenderer:

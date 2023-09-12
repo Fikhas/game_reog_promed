@@ -30,7 +30,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6909791685423149795}
+<<<<<<< HEAD
   m_RootOrder: 17
+=======
+  m_RootOrder: 16
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7354479495664800660
 MonoBehaviour:
@@ -81,7 +85,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6909791685423149795}
+<<<<<<< HEAD
   m_RootOrder: 12
+=======
+  m_RootOrder: 11
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7315585473788551027
 MonoBehaviour:
@@ -132,7 +140,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6909791685423149795}
+<<<<<<< HEAD
   m_RootOrder: 13
+=======
+  m_RootOrder: 12
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2068058963722061254
 MonoBehaviour:
@@ -165,8 +177,11 @@ GameObject:
   - component: {fileID: 7715749711012356115}
   - component: {fileID: 2658204296054674996}
   - component: {fileID: 4858339008902696848}
+<<<<<<< HEAD
   - component: {fileID: 6933924664912819036}
   - component: {fileID: 1052690151729416523}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 6
   m_TagString: Untagged
@@ -251,10 +266,16 @@ MonoBehaviour:
   itemId: 4
   blockName: Setelah dapet kunci
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 1052690151729416523}
   commandList:
   - {fileID: 4858339008902696848}
   - {fileID: 6933924664912819036}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 4858339008902696848}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &4858339008902696848
 MonoBehaviour:
@@ -270,9 +291,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
+<<<<<<< HEAD
   storyText: Apakah kunci ini bisa membuka jalanku untuk menuju kuda yang terakhir?
   description: 
   character: {fileID: 1854492563594234520}
+=======
+  storyText: Kunci yang sudah kamu dapatkan berguna untuk membuka jalan menuju kuda
+    terakhir yang kamu butuhkan.
+  description: 
+  character: {fileID: 1954913851041946984}
+>>>>>>> main
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -283,6 +311,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &6933924664912819036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +348,8 @@ MonoBehaviour:
   parentBlock: {fileID: 2658204296054674996}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &4170749009819988542
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,10 +367,15 @@ GameObject:
   - component: {fileID: 7356559269305460679}
   - component: {fileID: 4880618376252039042}
   - component: {fileID: 7262325657519951322}
+<<<<<<< HEAD
   - component: {fileID: 871049054377174468}
   - component: {fileID: 7540186530016937019}
   m_Layer: 0
   m_Name: Flowchart - Stlh mengalahkan prajurit singo
+=======
+  m_Layer: 0
+  m_Name: Flowchart - Setelah mengalahkan prajurit singo
+>>>>>>> main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +422,12 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 2740982790212950573}
+<<<<<<< HEAD
   selectedCommands: []
+=======
+  selectedCommands:
+  - {fileID: 7262325657519951322}
+>>>>>>> main
   variables: []
   description: 
   stepPause: 0
@@ -412,16 +453,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 88
     y: 100
     width: 226
+=======
+    x: 87
+    y: 100
+    width: 215
+>>>>>>> main
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 7
+<<<<<<< HEAD
   blockName: Stlh mengalahkan prajurit singo
   description: 
   eventHandler: {fileID: 7540186530016937019}
+=======
+  blockName: Saatnya serang Singo barong
+  description: 
+  eventHandler: {fileID: 0}
+>>>>>>> main
   commandList:
   - {fileID: 496941052241147210}
   - {fileID: 8293308692110608308}
@@ -429,7 +482,10 @@ MonoBehaviour:
   - {fileID: 7356559269305460679}
   - {fileID: 7262325657519951322}
   - {fileID: 4880618376252039042}
+<<<<<<< HEAD
   - {fileID: 871049054377174468}
+=======
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &496941052241147210
 MonoBehaviour:
@@ -445,7 +501,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 8
   indentLevel: 0
+<<<<<<< HEAD
   storyText: Heii Singo Barong, cepatlah  kamu menyerah. Kamu tidak akan menang melawanku.
+=======
+  storyText: Hey Singo Barong, cepatlah  kamu menyerah. Kamu tidak akan menang melawanku.
+>>>>>>> main
   description: 
   character: {fileID: 1854492563594234520}
   portrait: {fileID: 0}
@@ -472,8 +532,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 9
   indentLevel: 0
+<<<<<<< HEAD
   storyText: Aku sudah tidak sabar menjadikan kamu  hewan berkepala dua seperti yang
     diminta Dewi Songgolangit!
+=======
+  storyText: Aku sudah tidak sabar menjadikan kamu hewan berkepala dua.
+>>>>>>> main
   description: 
   character: {fileID: 1854492563594234520}
   portrait: {fileID: 0}
@@ -500,8 +564,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 10
   indentLevel: 0
+<<<<<<< HEAD
   storyText: Berani-beraninya kamu berbicara seperti itu! Aku tidak akan takut dengan
     raja berbadan kecil seperti kamu!
+=======
+  storyText: Berani-beraninya kamu bilang seperti itu! Aku tidak akan takut dengan
+    raja berbadan kecil seperti kamu.
+>>>>>>> main
   description: 
   character: {fileID: 5464095304911334949}
   portrait: {fileID: 0}
@@ -582,8 +651,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 0
+<<<<<<< HEAD
   storyText: Tentu saja, raja berbadan kecil yang akan menjadi pecundang dan aku
     akan menikah dengan Dewi Songgolangit!!!
+=======
+  storyText: Tentu saja raja berbadan kecil yang akan menjadi pecundang dan aku akan
+    menikah dengan Dewi Songgolangit!!!
+>>>>>>> main
   description: 
   character: {fileID: 5464095304911334949}
   portrait: {fileID: 0}
@@ -596,6 +670,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &871049054377174468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +707,8 @@ MonoBehaviour:
   parentBlock: {fileID: 2740982790212950573}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &5622262729375922033
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +739,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6909791685423149795}
+<<<<<<< HEAD
   m_RootOrder: 11
+=======
+  m_RootOrder: 10
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &390930598550439853
 MonoBehaviour:
@@ -713,7 +794,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6909791685423149795}
+<<<<<<< HEAD
   m_RootOrder: 14
+=======
+  m_RootOrder: 13
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5464095304911334949
 MonoBehaviour:
@@ -746,9 +831,12 @@ GameObject:
   - component: {fileID: 5919252948799857510}
   - component: {fileID: 5919252948799857509}
   - component: {fileID: 5919252948799857508}
+<<<<<<< HEAD
   - component: {fileID: 4986131078983375520}
   - component: {fileID: 6503796168886211756}
   - component: {fileID: 3656071697783138907}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Setelah dialog scene 2
   m_TagString: Untagged
@@ -798,7 +886,11 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 5919252948799857509}
   selectedCommands:
+<<<<<<< HEAD
   - {fileID: 3656071697783138907}
+=======
+  - {fileID: 5919252948799857508}
+>>>>>>> main
   variables: []
   description: 
   stepPause: 0
@@ -826,11 +918,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 71
+<<<<<<< HEAD
     width: 177
+=======
+    width: 208
+>>>>>>> main
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
+<<<<<<< HEAD
   blockName: Setelah dialog scene 2
   description: 
   eventHandler: {fileID: 6503796168886211756}
@@ -838,6 +935,13 @@ MonoBehaviour:
   - {fileID: 5919252948799857508}
   - {fileID: 3656071697783138907}
   - {fileID: 4986131078983375520}
+=======
+  blockName: Menyerang Kerajaan lodaya
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 5919252948799857508}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &5919252948799857508
 MonoBehaviour:
@@ -868,6 +972,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &4986131078983375520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,6 +1036,8 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!1 &5919252948872771752
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,11 +1052,16 @@ GameObject:
   - component: {fileID: 5919252948872771754}
   - component: {fileID: 4498924475332517051}
   - component: {fileID: 541021276206190235}
+<<<<<<< HEAD
   - component: {fileID: 3150195542033521219}
   - component: {fileID: 3011167097384238472}
   - component: {fileID: 3360773643817004170}
   m_Layer: 0
   m_Name: Flowchart - Melihat singo bersama merak
+=======
+  m_Layer: 0
+  m_Name: Flowchart - Klono melihat singo barong beserta merak
+>>>>>>> main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1023,7 +1135,11 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 88
+<<<<<<< HEAD
     y: 99
+=======
+    y: 100
+>>>>>>> main
     width: 213
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1031,6 +1147,7 @@ MonoBehaviour:
   itemId: 7
   blockName: melihat singo bersama merak
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 3011167097384238472}
   commandList:
   - {fileID: 5919252948872771754}
@@ -1038,6 +1155,13 @@ MonoBehaviour:
   - {fileID: 4498924475332517051}
   - {fileID: 541021276206190235}
   - {fileID: 3150195542033521219}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 5919252948872771754}
+  - {fileID: 4498924475332517051}
+  - {fileID: 541021276206190235}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &5919252948872771754
 MonoBehaviour:
@@ -1053,8 +1177,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 8
   indentLevel: 0
+<<<<<<< HEAD
   storyText: Akhirnya, aku menemukan Singo Barong disini! Tapi, mengapa dia terlihat
     seperti hewan berkepala dua.
+=======
+  storyText: Burung merak yang ada di atas kepalanya membuat dia seperti hewan berkepala
+    dua.
+>>>>>>> main
   description: 
   character: {fileID: 1854492563594234520}
   portrait: {fileID: 0}
@@ -1081,7 +1210,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 12
   indentLevel: 0
+<<<<<<< HEAD
   storyText: Sekarang adalah waktu yang tepat untuk menunjukkan kekuatanku!
+=======
+  storyText: Apabila aku berhasil mengalahkannya, lengkap sudah syarat yang diminta
+    oleh Dewi Songgolangit.
+>>>>>>> main
   description: 
   character: {fileID: 1854492563594234520}
   portrait: {fileID: 0}
@@ -1108,8 +1242,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 0
+<<<<<<< HEAD
   storyText: Sebelum melawan Singo Barong, kamu harus menghadapi pasukan Kerajaan
     Lodaya terlebih dahulu.
+=======
+  storyText: Sekarang, kamu harus mengalahkan prajurit Singo Barong terlebih dahulu!
+>>>>>>> main
   description: 
   character: {fileID: 1954913851041946984}
   portrait: {fileID: 0}
@@ -1122,6 +1260,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &3150195542033521219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1186,6 +1325,8 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!1 &5919252948955209864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,8 +1339,11 @@ GameObject:
   - component: {fileID: 5919252948955209868}
   - component: {fileID: 5919252948955209867}
   - component: {fileID: 5919252948955209866}
+<<<<<<< HEAD
   - component: {fileID: 2558432856753417353}
   - component: {fileID: 1103011101779201102}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Item shield
   m_TagString: Untagged
@@ -1220,7 +1364,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6909791685423149795}
+<<<<<<< HEAD
   m_RootOrder: 10
+=======
+  m_RootOrder: 9
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5919252948955209868
 MonoBehaviour:
@@ -1276,7 +1424,11 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 68
+<<<<<<< HEAD
     y: 69
+=======
+    y: 70
+>>>>>>> main
     width: 179
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1284,10 +1436,16 @@ MonoBehaviour:
   itemId: 0
   blockName: Mendapatkan gamelan
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 1103011101779201102}
   commandList:
   - {fileID: 5919252948955209866}
   - {fileID: 2558432856753417353}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 5919252948955209866}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &5919252948955209866
 MonoBehaviour:
@@ -1304,11 +1462,19 @@ MonoBehaviour:
   itemId: 1
   indentLevel: 0
   storyText: 'Gunakan item ini dengan cara menekan tombol U untuk bisa tahan dari
+<<<<<<< HEAD
     segala serangan musuh selama 5 detik.
 
 '
   description: 
   character: {fileID: 1954913851041946984}
+=======
+    segala serangan musuh selama 3 detik.
+
+'
+  description: 
+  character: {fileID: 0}
+>>>>>>> main
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1319,6 +1485,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &2558432856753417353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1355,6 +1522,8 @@ MonoBehaviour:
   parentBlock: {fileID: 5919252948955209867}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &5919252949016457832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,8 +1536,11 @@ GameObject:
   - component: {fileID: 5919252949016457835}
   - component: {fileID: 5919252949016457834}
   - component: {fileID: 5919252949016457833}
+<<<<<<< HEAD
   - component: {fileID: 630127451130391047}
   - component: {fileID: 7804570430351187889}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 5
   m_TagString: Untagged
@@ -1453,10 +1625,16 @@ MonoBehaviour:
   itemId: 4
   blockName: Kuda kedua
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 7804570430351187889}
   commandList:
   - {fileID: 5919252949016457833}
   - {fileID: 630127451130391047}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 5919252949016457833}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &5919252949016457833
 MonoBehaviour:
@@ -1472,10 +1650,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
+<<<<<<< HEAD
   storyText: Semudah ini ternyata mendapatkan kuda kedua. Tapi aku harus tetap fokus
     untuk mencari kuda terakhir!
   description: 
   character: {fileID: 1854492563594234520}
+=======
+  storyText: Saat ini, kamu sudah mendapatkan dua kuda. Akan tetapi, kamu masih harus
+    mencari satu kuda lagi!
+  description: 
+  character: {fileID: 0}
+>>>>>>> main
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1486,6 +1671,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &630127451130391047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1522,6 +1708,8 @@ MonoBehaviour:
   parentBlock: {fileID: 5919252949016457834}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &5919252949185445947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,8 +1722,11 @@ GameObject:
   - component: {fileID: 5919252949185445950}
   - component: {fileID: 5919252949185445949}
   - component: {fileID: 5919252949185445948}
+<<<<<<< HEAD
   - component: {fileID: 462046829531881536}
   - component: {fileID: 2693687391907724945}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 2
   m_TagString: Untagged
@@ -1584,8 +1775,12 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 5919252949185445949}
+<<<<<<< HEAD
   selectedCommands:
   - {fileID: 5919252949185445948}
+=======
+  selectedCommands: []
+>>>>>>> main
   variables: []
   description: 
   stepPause: 0
@@ -1620,10 +1815,16 @@ MonoBehaviour:
   itemId: 0
   blockName: Kuda pertama
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 2693687391907724945}
   commandList:
   - {fileID: 5919252949185445948}
   - {fileID: 462046829531881536}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 5919252949185445948}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &5919252949185445948
 MonoBehaviour:
@@ -1639,9 +1840,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
+<<<<<<< HEAD
   storyText: Satu kuda sudah aku dapatkan! Dimana dua kuda lainnya?
   description: 
   character: {fileID: 1854492563594234520}
+=======
+  storyText: Kamu berhasil mendapatkan kuda pertama dan masih ada dua kuda lagi yang
+    harus kamu cari!
+  description: 
+  character: {fileID: 1954913851041946984}
+>>>>>>> main
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1652,6 +1860,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &462046829531881536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1688,6 +1897,8 @@ MonoBehaviour:
   parentBlock: {fileID: 5919252949185445949}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &5919252949819226113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,9 +1912,12 @@ GameObject:
   - component: {fileID: 5919252949819226117}
   - component: {fileID: 5919252949819226138}
   - component: {fileID: 4670296768350908135}
+<<<<<<< HEAD
   - component: {fileID: 6203121272912213596}
   - component: {fileID: 4093364060398018892}
   - component: {fileID: 1087773153469003425}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 7
   m_TagString: Untagged
@@ -1753,7 +1967,11 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 5919252949819226117}
   selectedCommands:
+<<<<<<< HEAD
   - {fileID: 1087773153469003425}
+=======
+  - {fileID: 4670296768350908135}
+>>>>>>> main
   variables: []
   description: 
   stepPause: 0
@@ -1788,12 +2006,19 @@ MonoBehaviour:
   itemId: 1
   blockName: Kuda ketiga
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 4093364060398018892}
   commandList:
   - {fileID: 5919252949819226138}
   - {fileID: 4670296768350908135}
   - {fileID: 1087773153469003425}
   - {fileID: 6203121272912213596}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 5919252949819226138}
+  - {fileID: 4670296768350908135}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &5919252949819226138
 MonoBehaviour:
@@ -1850,6 +2075,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &6203121272912213596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1913,6 +2139,8 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!1 &5919252949907910764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,8 +2153,11 @@ GameObject:
   - component: {fileID: 5919252949907910767}
   - component: {fileID: 5919252949907910766}
   - component: {fileID: 5919252949907910765}
+<<<<<<< HEAD
   - component: {fileID: 770397318321660911}
   - component: {fileID: 1248782674989502095}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Item darah
   m_TagString: Untagged
@@ -1947,7 +2178,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6909791685423149795}
+<<<<<<< HEAD
   m_RootOrder: 9
+=======
+  m_RootOrder: 8
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5919252949907910767
 MonoBehaviour:
@@ -2011,10 +2246,16 @@ MonoBehaviour:
   itemId: 0
   blockName: Item darah
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 1248782674989502095}
   commandList:
   - {fileID: 5919252949907910765}
   - {fileID: 770397318321660911}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 5919252949907910765}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &5919252949907910765
 MonoBehaviour:
@@ -2035,7 +2276,11 @@ MonoBehaviour:
 
 '
   description: 
+<<<<<<< HEAD
   character: {fileID: 1954913851041946984}
+=======
+  character: {fileID: 0}
+>>>>>>> main
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2046,6 +2291,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &770397318321660911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2082,6 +2328,8 @@ MonoBehaviour:
   parentBlock: {fileID: 5919252949907910766}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &5919252950467799829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,9 +2342,12 @@ GameObject:
   - component: {fileID: 5919252950467799831}
   - component: {fileID: 5919252950467799830}
   - component: {fileID: 5919252950467799849}
+<<<<<<< HEAD
   - component: {fileID: 3361223138351368956}
   - component: {fileID: 4168701352181785613}
   - component: {fileID: 4195193139552392651}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Flowchart - Stage 3
   m_TagString: Untagged
@@ -2146,7 +2397,11 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 5919252950467799830}
   selectedCommands:
+<<<<<<< HEAD
   - {fileID: 4195193139552392651}
+=======
+  - {fileID: 5919252950467799849}
+>>>>>>> main
   variables: []
   description: 
   stepPause: 0
@@ -2181,11 +2436,17 @@ MonoBehaviour:
   itemId: 0
   blockName: Mendapatkan gamelan
   description: 
+<<<<<<< HEAD
   eventHandler: {fileID: 4168701352181785613}
   commandList:
   - {fileID: 5919252950467799849}
   - {fileID: 4195193139552392651}
   - {fileID: 3361223138351368956}
+=======
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 5919252950467799849}
+>>>>>>> main
   suppressAllAutoSelections: 0
 --- !u!114 &5919252950467799849
 MonoBehaviour:
@@ -2215,6 +2476,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &3361223138351368956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2279,6 +2541,8 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!1 &6254573491503545043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,7 +2573,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6909791685423149795}
+<<<<<<< HEAD
   m_RootOrder: 15
+=======
+  m_RootOrder: 14
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3850209228488173240
 MonoBehaviour:
@@ -2360,7 +2628,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6909791685423149795}
+<<<<<<< HEAD
   m_RootOrder: 16
+=======
+  m_RootOrder: 15
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1854492563594234520
 MonoBehaviour:
@@ -2411,7 +2683,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6909791685423149795}
+<<<<<<< HEAD
   m_RootOrder: 18
+=======
+  m_RootOrder: 17
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1954913851041946984
 MonoBehaviour:
@@ -2432,6 +2708,7 @@ MonoBehaviour:
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
+<<<<<<< HEAD
 --- !u!1 &8803909248971588329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2656,6 +2933,8 @@ MonoBehaviour:
   parentBlock: {fileID: 8117773084571236712}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+=======
+>>>>>>> main
 --- !u!1 &9038872811308245666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2692,7 +2971,10 @@ Transform:
   - {fileID: 5919252948799857511}
   - {fileID: 5919252948872771757}
   - {fileID: 8710192184271180851}
+<<<<<<< HEAD
   - {fileID: 5305677764410030360}
+=======
+>>>>>>> main
   - {fileID: 5919252949907910752}
   - {fileID: 5919252948955209869}
   - {fileID: 8671496626437066566}

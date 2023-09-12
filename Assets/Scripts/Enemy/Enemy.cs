@@ -7,24 +7,23 @@ public enum EnemyState
     idle,
     walk,
     attack,
-    stagger
+    stagger,
+    stat
 }
 
 public class Enemy : MonoBehaviour
 {
     public EnemyState currentState;
-    public float health;
-    public string enemyName;
-    public int baseAttack;
-    public float moveSpeed;
     public HealthBar healthBar;
-    public GameObject currentEnemy;
-    public bool isHit;
+    private SpriteRenderer sprite;
+    public float health;
     private float timer;
     private float delay = 3f;
     private string color = "red";
-    private SpriteRenderer sprite;
+
+    [HideInInspector]
     public Signal deathSignal;
+    public bool isHit;
 
     void Awake()
     {
@@ -36,7 +35,6 @@ public class Enemy : MonoBehaviour
     {
         if (isHit && timer < delay)
         {
-            // playerCurrentState = PlayerState.hit;
             if (color == "red" && Mathf.Round(timer * 10.0f) * 0.1f % .4f != 0f)
             {
                 sprite.material.SetColor("_Color", Color.red);
@@ -54,7 +52,6 @@ public class Enemy : MonoBehaviour
             isHit = false;
             timer = 0f;
             sprite.material.SetColor("_Color", Color.white);
-            // playerCurrentState = PlayerState.walk;
         }
     }
 
@@ -71,7 +68,10 @@ public class Enemy : MonoBehaviour
     public void Knock(Rigidbody2D myRigidBody, float knockTime, float damage)
     {
         StartCoroutine(KnockCo(myRigidBody, knockTime));
-        TakeDamage(damage);
+        if (currentState == EnemyState.stagger)
+        {
+            TakeDamage(damage);
+        }
         healthBar.SetHealth(health);
     }
 

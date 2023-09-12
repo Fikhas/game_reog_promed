@@ -2,15 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerKnockback : MonoBehaviour
+public class PlayerKnockback : Knockback
 {
-    public float thrust;
-    public float knockTime;
-    public float damage;
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Debug.Log(other);
         if (other.CompareTag("Breakable"))
         {
             // other.GetComponent<Pot>().Smash();
@@ -24,8 +19,24 @@ public class PlayerKnockback : MonoBehaviour
                 other.GetComponentInParent<Enemy>().Knock(hit, knockTime, damage);
                 other.GetComponentInParent<Enemy>().isHit = true;
                 Vector2 difference = hit.transform.position - transform.position;
-                difference = difference.normalized * thrust;
-                hit.AddForce(difference, ForceMode2D.Impulse);
+                Vector2 diff = difference.normalized;
+                hit.AddForce(diff * thrust, ForceMode2D.Impulse);
+            }
+        }
+        if (other.CompareTag("SingoBarong"))
+        {
+            Rigidbody2D hit = other.GetComponentInParent<Rigidbody2D>();
+            if (hit != null)
+            {
+                if (other.GetComponentInParent<SingoBarong>().currentState != EnemyState.stat)
+                {
+                    other.GetComponentInParent<Enemy>().currentState = EnemyState.stagger;
+                    other.GetComponentInParent<Enemy>().Knock(hit, knockTime, damage);
+                    other.GetComponentInParent<Enemy>().isHit = true;
+                    Vector2 difference = hit.transform.position - transform.position;
+                    Vector2 diff = difference.normalized;
+                    hit.AddForce(diff * thrust, ForceMode2D.Impulse);
+                }
             }
         }
     }

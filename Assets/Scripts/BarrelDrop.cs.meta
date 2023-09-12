@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/BarrelDrop.cs.meta
+guid: 143922fa7340fb84689ee9973d0a1e43
+========
+guid: d444ae97b03391b46a91d43afd302eba
+>>>>>>>> main:Assets/Scripts/CamAnimController.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
