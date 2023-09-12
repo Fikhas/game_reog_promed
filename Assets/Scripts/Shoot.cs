@@ -6,22 +6,35 @@ public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
     public Transform bulletPos;
-
     float timer;
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > 2)
+        if (Vector3.Distance(gameObject.GetComponent<EnemyWalk>().target.transform.position, transform.position) <= gameObject.GetComponent<EnemyWalk>().attackRadius)
+        {
+            timer += Time.deltaTime;
+            Debug.Log("waktu berjalan");
+        }
+        if (timer > 1 && Vector3.Distance(gameObject.GetComponent<EnemyWalk>().target.transform.position, transform.position) <= gameObject.GetComponent<EnemyWalk>().attackRadius)
         {
             timer = 0;
-            Shooting();
+            StartCoroutine(ShootingCo());
         }
     }
 
     private void Shooting()
     {
         Instantiate(bullet, bulletPos.position, Quaternion.identity);
+    }
+
+    private IEnumerator ShootingCo()
+    {
+        Debug.Log("enemy attack");
+        gameObject.GetComponent<Animator>().SetBool("isAttack", true);
+        Instantiate(bullet, transform.Find("BulletPos").position, Quaternion.identity);
+        yield return new WaitForSeconds(.3f);
+        gameObject.GetComponent<Animator>().SetBool("isAttack", false);
+
     }
     // private float timer;
     // [SerializeField] float delay;

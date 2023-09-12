@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,9 @@ public class HorseScript : MonoBehaviour
     [SerializeField] GameObject buttonClue;
     [SerializeField] Item item;
     [SerializeField] Inventory playerInventory;
+    [SerializeField] GameObject horse;
     private bool isCanTake;
+    private bool isTaken;
     private bool isOnArea;
 
     private void Start()
@@ -19,12 +22,14 @@ public class HorseScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnArea && buttonClue.activeInHierarchy)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnArea && buttonClue.activeInHierarchy && !isTaken && isCanTake)
         {
+            isTaken = true;
             playerInventory.AddItem(item);
             buttonClue.SetActive(false);
-            gameObject.GetComponentInChildren<DialogPopUp>().PopUpActiveWithTime(item.itemDescription, 3f);
-            StartCoroutine(InactiveObject());
+            gameObject.GetComponentInChildren<DialogInteractObject>().PopUpActive();
+            horse.SetActive(false);
+            signalToRaise.Raise();
         }
     }
 

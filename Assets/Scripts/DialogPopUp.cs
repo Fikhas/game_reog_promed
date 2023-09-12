@@ -29,7 +29,7 @@ public class DialogPopUp : MonoBehaviour
 
     public void PopUpActive(string text)
     {
-        playerToFreeze.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
+        // playerToFreeze.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
         textDialog.text = text;
         dialogBox.SetActive(true);
         dialogSignalOn.Raise();
@@ -37,14 +37,14 @@ public class DialogPopUp : MonoBehaviour
 
     public void PopUpInactive()
     {
-        playerToFreeze.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.idle;
+        // playerToFreeze.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.idle;
         dialogBox.SetActive(false);
         isRaiseOffSignal = true;
     }
 
     public void PopUpActiveWithTime(string text, float popUpTime)
     {
-        playerToFreeze.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
+        // playerToFreeze.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
         textDialog.text = text;
         dialogBox.SetActive(true);
         dialogSignalOn.Raise();
@@ -56,6 +56,6 @@ public class DialogPopUp : MonoBehaviour
         yield return new WaitForSeconds(popUpTime);
         dialogBox.SetActive(false);
         isRaiseOffSignal = true;
-        playerToFreeze.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.idle;
+        // playerToFreeze.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.idle;
     }
 }

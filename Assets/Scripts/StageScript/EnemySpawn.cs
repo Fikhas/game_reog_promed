@@ -42,6 +42,20 @@ public class EnemySpawn : MonoBehaviour
         }
     }
 
+    public void ManualSpawnEnemy()
+    {
+        for (int i = 0; i < enemyAmount; i++)
+        {
+            GameObject newEnemy = Instantiate(enemy, enemyPos[i].position, Quaternion.identity);
+            newEnemy.GetComponent<Enemy>().deathSignal = enemySignal;
+            if (i < enemyAmount)
+            {
+                isSpawn = false;
+                isSpawned = true;
+            }
+        }
+    }
+
     public void ChangeSpawnState()
     {
         if (!isSpawned)

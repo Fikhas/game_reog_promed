@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bdadda92afaeb478ff10dd09e7e0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 7
+  force: 10
 --- !u!114 &6379040836451463938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36cfc2bec6659e04882a1d38ee43fb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 10
+  thrust: 4
   knockTime: 0.2
   damage: 1

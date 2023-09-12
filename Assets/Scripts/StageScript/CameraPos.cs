@@ -9,7 +9,7 @@ public class CameraPos : MonoBehaviour
 
     private void Start()
     {
-        camm = Camera.main.GetComponent<CameraMovement>();
+        camm = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

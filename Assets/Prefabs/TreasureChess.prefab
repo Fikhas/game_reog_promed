@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -1457035091
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -296633471, guid: 5ae6250f5433a32489cc7604423b1871, type: 3}
+  m_Sprite: {fileID: -21426592, guid: 1b9aa2247937e2d4b8fd4ba3a378a7e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +127,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.75, y: 1.875}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1.75, y: 1.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -148,14 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7527bcbccb8e5f458bc263f29db2c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBox: {fileID: 0}
   anim: {fileID: 1879878857927470108}
   item: {fileID: 0}
-  textField: {fileID: 0}
   placeItem: {fileID: 0}
   playerInventory: {fileID: 11400000, guid: ed7dda032888af44aa8ead171c4a58a3, type: 2}
   signalToRaise: {fileID: 0}
   buttonClue: {fileID: 5198852902136844522}
+  isCanOpen: 0
 --- !u!1 &4508418101742141389
 GameObject:
   m_ObjectHideFlags: 0
