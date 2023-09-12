@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/DIALOG BOX.png.meta
+guid: 83db9d11a556e4fdeaf16a9ae4945e8f
+========
 guid: e46cea036969242a4958c94ff26898ad
+>>>>>>>> main:Assets/Sprites/cut scene 2.1 22-8.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
