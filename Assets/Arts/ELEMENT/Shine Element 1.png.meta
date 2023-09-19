@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Sprites/Cut scene/cut scene 2.1 22-8.png.meta
-guid: a931a375ae2214e549d8b4d12d56b24a
-========
 guid: 629a2623b9fe65242b7fa6bc4606ecc4
->>>>>>>> main:Assets/Arts/ELEMENT/Shine Element 1.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1

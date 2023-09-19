@@ -11,10 +11,27 @@ public class DialogSceneManagement : MonoBehaviour
     [SerializeField] Signal dialogSceneOffSignal;
     [SerializeField] Signal dialogSceneOnSignal;
     [SerializeField] GameObject canvasToOff;
+    [SerializeField] bool isPlayWithTrigger;
     private bool isRaiseOffSignal;
+    private bool isCount;
+    private float timer;
 
     private void Update()
     {
+        if (isCount)
+        {
+            timer += Time.deltaTime;
+        }
+        if (timer > 0.3f)
+        {
+            dialogScene.SetActive(true);
+            dialogSceneCamera.SetActive(true);
+            mainCamera.SetActive(false);
+            canvasToOff.SetActive(false);
+            dialogSceneOnSignal.Raise();
+            isRaiseOffSignal = true;
+            isCount = false;
+        }
         if (!dialogScene.activeInHierarchy && isRaiseOffSignal)
         {
             dialogSceneOffSignal.Raise();
@@ -27,17 +44,37 @@ public class DialogSceneManagement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!gameObject.GetComponent<StageManagement>().isEntered)
+        if (isPlayWithTrigger)
         {
-            if (other.CompareTag("Player"))
+            if (!gameObject.GetComponent<StageManagement>().isEntered)
             {
-                dialogScene.SetActive(true);
-                dialogSceneCamera.SetActive(true);
-                mainCamera.SetActive(false);
-                canvasToOff.SetActive(false);
-                dialogSceneOnSignal.Raise();
-                isRaiseOffSignal = true;
+                if (other.CompareTag("Player"))
+                {
+                    dialogScene.SetActive(true);
+                    dialogSceneCamera.SetActive(true);
+                    mainCamera.SetActive(false);
+                    canvasToOff.SetActive(false);
+                    dialogSceneOnSignal.Raise();
+                    isRaiseOffSignal = true;
+                }
             }
+        }
+    }
+
+    public void PlayDialogScene()
+    {
+        // if (gameObject.GetComponent<StageManagement>().isAnyPlayer)
+        // {
+        //     isCount = true;
+        // }
+        if (gameObject.GetComponent<StageManagement>().isAnyPlayer)
+        {
+            dialogScene.SetActive(true);
+            dialogSceneCamera.SetActive(true);
+            mainCamera.SetActive(false);
+            canvasToOff.SetActive(false);
+            dialogSceneOnSignal.Raise();
+            isRaiseOffSignal = true;
         }
     }
 }
