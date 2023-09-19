@@ -18,6 +18,8 @@ TagManager:
   - ImunAnim
   - BarrelDrop
   - BarrelClue
+  - FadeTransition
+  - Canvas
   layers:
   - Default
   - TransparentFX

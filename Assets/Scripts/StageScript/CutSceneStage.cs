@@ -42,8 +42,11 @@ public class CutSceneStage : MonoBehaviour
 
     public void ManualCutScene()
     {
-        player.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
-        StartCoroutine(ManualCutSceneCo(2f));
+        if (gameObject.GetComponent<StageManagement>().isAnyPlayer)
+        {
+            player.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
+            StartCoroutine(ManualCutSceneCo(2f));
+        }
     }
 
     private IEnumerator ManualCutSceneCo(float waitTime)
