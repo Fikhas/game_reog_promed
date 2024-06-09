@@ -11,6 +11,7 @@ public class HorseScript : MonoBehaviour
     [SerializeField] Item item;
     [SerializeField] Inventory playerInventory;
     [SerializeField] GameObject horse;
+    [SerializeField] GameObject pickSoundEffect;
     private bool isCanTake;
     private bool isTaken;
     private bool isOnArea;
@@ -24,6 +25,7 @@ public class HorseScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isOnArea && buttonClue.activeInHierarchy && !isTaken && isCanTake)
         {
+            Instantiate(pickSoundEffect);
             isTaken = true;
             playerInventory.AddItem(item);
             buttonClue.SetActive(false);

@@ -8,6 +8,8 @@ public class CutSceneStage : MonoBehaviour
     [SerializeField] GameObject cutSceneToManage;
     [SerializeField] Signal cutSceneOnSignal;
     [SerializeField] Signal cutSeneOffSignal;
+    [SerializeField] Signal[] additionalSignal;
+    [SerializeField] bool isPlayWithTrigger;
     private bool isRaiseOffSignal;
     private GameObject player;
 
@@ -20,6 +22,13 @@ public class CutSceneStage : MonoBehaviour
     {
         if (!cutSceneToManage.activeInHierarchy && isRaiseOffSignal)
         {
+            if (additionalSignal != null)
+            {
+                foreach (Signal signal in additionalSignal)
+                {
+                    signal.Raise();
+                }
+            }
             cutSeneOffSignal.Raise();
             isRaiseOffSignal = false;
         }
@@ -31,7 +40,7 @@ public class CutSceneStage : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                if (gameObject.GetComponent<DialogSceneManagement>() == null)
+                if (isPlayWithTrigger)
                 {
                     player.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
                     StartCoroutine(ManualCutSceneCo(1f));
@@ -44,16 +53,16 @@ public class CutSceneStage : MonoBehaviour
     {
         if (gameObject.GetComponent<StageManagement>().isAnyPlayer)
         {
-            player.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
             StartCoroutine(ManualCutSceneCo(2f));
         }
     }
 
     private IEnumerator ManualCutSceneCo(float waitTime)
     {
+        yield return new WaitForSeconds(0.1f);
+        cutSceneOnSignal.Raise();
         yield return new WaitForSeconds(waitTime);
         cutSceneToManage.SetActive(true);
-        cutSceneOnSignal.Raise();
         isRaiseOffSignal = true;
     }
 }

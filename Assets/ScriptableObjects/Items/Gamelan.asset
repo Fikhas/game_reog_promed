@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deae3538f5551a040aee7187da252b69, type: 3}
   m_Name: Gamelan
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 21300000, guid: 5aafd2af78444764584dc3e91094005f, type: 3}
+  itemSprite: {fileID: 977415759, guid: ed660c56eb3e556408223740065f2815, type: 3}
   itemDescription: This is Gamelan!
   isKey: 0
   isShield: 0

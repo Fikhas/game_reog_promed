@@ -8,6 +8,7 @@ public class ShieldScript : MonoBehaviour
     [SerializeField] TMP_Text shieldAmount;
     [SerializeField] Inventory inventory;
     [SerializeField] Signal imunActiveSignal;
+    [SerializeField] GameObject imunSoundEffect;
     public static ShieldScript sharedInstance;
     private bool isCanUse;
     private GameObject player;
@@ -45,6 +46,7 @@ public class ShieldScript : MonoBehaviour
             PlayerMovement.sharedInstance.playerCurrentState = PlayerState.imun;
             SubAmount(1);
             imunActiveSignal.Raise();
+            Instantiate(imunSoundEffect);
             StartCoroutine(ImunCo());
         }
         else
@@ -55,9 +57,8 @@ public class ShieldScript : MonoBehaviour
 
     private IEnumerator ImunCo()
     {
-        // Instantiate(player.GetComponent<PlayerMovement>().imunAnim, player.transform, worldPositionStays: false);
         isCanUse = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         PlayerMovement.sharedInstance.playerCurrentState = PlayerState.idle;
         isCanUse = false;
     }

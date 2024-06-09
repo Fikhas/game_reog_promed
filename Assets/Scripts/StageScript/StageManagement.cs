@@ -6,7 +6,6 @@ using UnityEngine;
 public class StageManagement : MonoBehaviour
 {
     public Vector3 spawnPosition;
-
     [HideInInspector] public bool isEntered;
     [HideInInspector] public bool isAnyPlayer;
 
@@ -17,6 +16,7 @@ public class StageManagement : MonoBehaviour
         {
             if (!isEntered)
             {
+                isAnyPlayer = true;
                 StartCoroutine(EnteredCo());
             }
         }
@@ -24,13 +24,17 @@ public class StageManagement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!other.CompareTag("Player"))
-        {
-            isAnyPlayer = false;
-        }
-        else
+        if (other.CompareTag("Player"))
         {
             isAnyPlayer = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isAnyPlayer = false;
         }
     }
 

@@ -6,10 +6,6 @@ public class PlayerKnockback : Knockback
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Breakable"))
-        {
-            // other.GetComponent<Pot>().Smash();
-        }
         if (other.CompareTag("EnemyBody"))
         {
             Rigidbody2D hit = other.GetComponentInParent<Rigidbody2D>();

@@ -13,31 +13,29 @@ public enum PlayerState
     interact
 }
 
-public enum PlayerFacing
-{
-    right,
-    left,
-    up,
-    down
-}
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] float speed;
-
-    public GameObject imunAnim;
-    public Vector3 change;
-    public Animator animator;
-    public PlayerState playerCurrentState;
-    public FloatValue currentHealth;
-    public HealthBar healthBar;
-    public GameObject playerDeathPanel;
-    public static PlayerMovement sharedInstance;
-
+    [SerializeField] GameObject attackSoundEffect;
+    [SerializeField] GameObject deathSoundEffect;
+    [SerializeField] GameObject knockSoundEffect;
+    [SerializeField] GameObject knockWithShieldSoundEffect;
+    [SerializeField] GameObject klonoLaughSoundEffect;
+    [SerializeField] Animator healthWarning;
+    [SerializeField] Signal healthUnder;
+    [HideInInspector] public PlayerState playerCurrentState;
+    [HideInInspector] public Vector3 change;
     [HideInInspector] public Rigidbody2D myRigidBody;
     [HideInInspector] public bool isHit;
     [HideInInspector] public bool isCanAttack;
     [HideInInspector] public float timer;
+    public GameObject imunAnim;
+    public Animator animator;
+    public FloatValue currentHealth;
+    public HealthBar healthBar;
+    public GameObject playerDeathPanel;
+    public static PlayerMovement sharedInstance;
     private float delay = 2f;
     private string color = "red";
 
@@ -50,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("moveY", -1);
         healthBar.SetMaxValue(currentHealth.runtimeValue);
         healthBar.SetHealth(currentHealth.runtimeValue);
+        healthWarning.SetBool("isWarningOn", false);
     }
 
 
@@ -93,6 +92,25 @@ public class PlayerMovement : MonoBehaviour
         {
             currentHealth.runtimeValue -= 1;
         }
+        if (currentHealth.runtimeValue >= 30)
+        {
+            healthWarning.SetBool("isWarningOn", false);
+        }
+        else
+        {
+            healthWarning.SetBool("isWarningOn", true);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet") || other.CompareTag("EnemySword"))
+        {
+            if (playerCurrentState == PlayerState.imun)
+            {
+                Instantiate(knockWithShieldSoundEffect);
+            }
+        }
     }
 
     void AnimationUpdate()
@@ -130,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerCurrentState == PlayerState.imun)
         {
+            Instantiate(attackSoundEffect);
             isCanAttack = true;
             animator.SetBool("isAttack", true);
             yield return new WaitForSeconds(.3f);
@@ -138,28 +157,37 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            Instantiate(attackSoundEffect);
             isCanAttack = true;
             animator.SetBool("isAttack", true);
             playerCurrentState = PlayerState.attack;
             yield return new WaitForSeconds(.3f);
             isCanAttack = false;
             animator.SetBool("isAttack", false);
-            playerCurrentState = PlayerState.walk;
+            if (playerCurrentState != PlayerState.interact)
+            {
+                playerCurrentState = PlayerState.walk;
+            }
         }
     }
 
     public void Knock(float knockTime, float damage)
     {
         currentHealth.runtimeValue -= damage;
-        // playerHealthSignal.Raise();
         if (currentHealth.runtimeValue > 0)
         {
+            Instantiate(knockSoundEffect);
             StartCoroutine(KnockCo(.4f));
             healthBar.SetHealth(currentHealth.runtimeValue);
-            // sprite.material.SetColor("_Color", Color.red);
+            healthWarning.SetBool("isWarningOn", false);
+            if (currentHealth.runtimeValue < 30)
+            {
+                healthUnder.Raise();
+            }
         }
         else
         {
+            Instantiate(deathSoundEffect);
             this.gameObject.SetActive(false);
             healthBar.SetHealth(currentHealth.runtimeValue);
             playerDeathPanel.SetActive(true);
@@ -172,7 +200,6 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(knockTime);
         myRigidBody.velocity = Vector2.zero;
         playerCurrentState = PlayerState.idle;
-        // sprite.material.SetColor("_Color", Color.white);
     }
 
     public void SetPlayerToStagger()
@@ -188,6 +215,7 @@ public class PlayerMovement : MonoBehaviour
     public void SetPlayerToIdle()
     {
         playerCurrentState = PlayerState.idle;
+        Time.timeScale = 1;
     }
 
     public void ImunEffectAtive()
@@ -200,5 +228,10 @@ public class PlayerMovement : MonoBehaviour
         Instantiate(imunAnim, this.transform, worldPositionStays: false);
         yield return new WaitForSeconds(3f);
         Destroy(GameObject.FindGameObjectWithTag("ImunAnim"));
+    }
+
+    public void KlonoLaugh()
+    {
+        Instantiate(klonoLaughSoundEffect);
     }
 }

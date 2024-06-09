@@ -8,12 +8,17 @@ public class Barrel : MonoBehaviour
     [SerializeField] GameObject smoke;
     [SerializeField] GameObject parentObject;
     [SerializeField] GameObject barrelHitBox;
+    [SerializeField] GameObject breakSoundEffect;
     private float delay = 0.3f;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("BarrelClue"))
         {
+            if (breakSoundEffect != null)
+            {
+                Instantiate(breakSoundEffect);
+            }
             if (gameObject.GetComponentInParent<BarrelParentScript>() != null)
             {
                 gameObject.GetComponentInParent<BarrelParentScript>().isCountToDestroy = true;
@@ -21,7 +26,15 @@ public class Barrel : MonoBehaviour
         }
         if (other.CompareTag("PlayerSword"))
         {
+            if (breakSoundEffect != null)
+            {
+                Instantiate(breakSoundEffect);
+            }
             smoke.SetActive(true);
+            if (gameObject.GetComponent<DialogSpawner>() != null)
+            {
+                gameObject.GetComponent<DialogSpawner>().SpawnDialog();
+            }
             StartCoroutine(HeartCo());
         }
     }
@@ -33,10 +46,6 @@ public class Barrel : MonoBehaviour
             barrelHitBox.SetActive(true);
         }
         yield return new WaitForSeconds(delay);
-        if (gameObject.GetComponentInParent<DialogInteractObject>() != null)
-        {
-            gameObject.GetComponentInParent<DialogInteractObject>().PopUpActive();
-        }
         if (heart != null)
         {
             Instantiate(heart, this.transform.position, Quaternion.identity);

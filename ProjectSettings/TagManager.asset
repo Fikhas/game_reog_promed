@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Breakable
   - Flowchart
   - TextBox
   - PlayerSword
@@ -20,6 +19,11 @@ TagManager:
   - BarrelClue
   - FadeTransition
   - Canvas
+  - Bullet
+  - Audio
+  - Heart
+  - Stage9
+  - BarrelStage9
   layers:
   - Default
   - TransparentFX
@@ -60,21 +64,24 @@ TagManager:
   - name: Map
     uniqueID: 1420105801
     locked: 0
-  - name: Interactable
-    uniqueID: 2837932205
-    locked: 0
   - name: Effect
     uniqueID: 1007105215
     locked: 0
-  - name: Enemy
-    uniqueID: 3770468187
+  - name: Interactable
+    uniqueID: 2837932205
     locked: 0
   - name: Player
     uniqueID: 2623156267
     locked: 0
-  - name: UI
-    uniqueID: 1273924423
+  - name: Enemy
+    uniqueID: 3770468187
+    locked: 0
+  - name: Horse
+    uniqueID: 304698763
     locked: 0
   - name: Smoke
     uniqueID: 2330899621
+    locked: 0
+  - name: UI
+    uniqueID: 1273924423
     locked: 0

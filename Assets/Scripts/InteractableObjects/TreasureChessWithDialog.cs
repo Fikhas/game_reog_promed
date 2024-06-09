@@ -12,6 +12,8 @@ public class TreasureChessWithDialog : MonoBehaviour
     [SerializeField] Inventory playerInventory;
     [SerializeField] Signal signalToRaise;
     [SerializeField] GameObject buttonClue;
+    [SerializeField] GameObject openSoundEffect;
+    [SerializeField] GameObject getItemSoundEffect;
     private bool isOpened;
     [SerializeField] bool isCanOpen;
     private bool isOnArea;
@@ -31,15 +33,7 @@ public class TreasureChessWithDialog : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space) && isOnArea && buttonClue.activeInHierarchy)
         {
-            anim.SetBool("isOpen", true);
-            playerInventory.AddItem(item);
-            buttonClue.SetActive(false);
-            PlayerMovement.sharedInstance.animator.SetBool("isHoldItem", true);
-            placeItem.GetComponent<SpriteRenderer>().sprite = item.itemSprite;
-            placeItem.SetActive(true);
-            isOpened = true;
-            gameObject.GetComponentInChildren<DialogInteractObject>().PopUpActive();
-            signalToRaise.Raise();
+            StartCoroutine(OpenChessCo());
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -61,6 +55,22 @@ public class TreasureChessWithDialog : MonoBehaviour
             isOnArea = false;
             buttonClue.SetActive(false);
         }
+    }
+
+    private IEnumerator OpenChessCo()
+    {
+        yield return new WaitForSeconds(0f);
+        anim.SetBool("isOpen", true);
+        Instantiate(openSoundEffect);
+        Instantiate(getItemSoundEffect);
+        playerInventory.AddItem(item);
+        buttonClue.SetActive(false);
+        PlayerMovement.sharedInstance.animator.SetBool("isHoldItem", true);
+        placeItem.GetComponent<SpriteRenderer>().sprite = item.itemSprite;
+        placeItem.SetActive(true);
+        isOpened = true;
+        gameObject.GetComponentInChildren<DialogInteractObject>().PopUpActive();
+        signalToRaise.Raise();
     }
 
     public void ChangeOpenState()

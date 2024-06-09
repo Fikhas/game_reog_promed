@@ -6,6 +6,7 @@ using UnityEngine;
 public class SingoThrow : MonoBehaviour
 {
     [SerializeField] GameObject stone;
+    [SerializeField] GameObject throwSoundEffect;
     private float timer;
     private float delay;
     private GameObject target;
@@ -32,7 +33,14 @@ public class SingoThrow : MonoBehaviour
 
         if (timer >= 1 && gameObject.GetComponent<Enemy>().currentState != EnemyState.stat)
         {
-            SingoThrowStone();
+            if (gameObject.GetComponent<SingoBarong>().currentState != EnemyState.stagger)
+            {
+                if (gameObject.GetComponent<EnemyWalk>().isStatic == false)
+                {
+                    SingoThrowStone();
+                    timer = 0;
+                }
+            }
             timer = 0;
         }
     }
@@ -44,6 +52,7 @@ public class SingoThrow : MonoBehaviour
 
     private IEnumerator SingoThrowCo()
     {
+        Instantiate(throwSoundEffect);
         anim.SetBool("isThrow", true);
         Instantiate(stone, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.3f);

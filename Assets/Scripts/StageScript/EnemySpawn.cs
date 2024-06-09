@@ -7,13 +7,15 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] Signal enemySignal;
     [SerializeField] GameObject enemy;
     [SerializeField] Transform[] enemyPos;
+    [SerializeField] bool isSpawnWithTrigger;
+    public float spawnDelayTime;
+    [HideInInspector] public bool isSpawned;
     public int enemyAmount;
     private bool isSpawn;
-    private bool isSpawned;
 
     private void Update()
     {
-        if (isSpawn)
+        if (isSpawn && !isSpawned)
         {
             for (int i = 0; i < enemyAmount; i++)
             {
@@ -34,9 +36,9 @@ public class EnemySpawn : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                if (gameObject.GetComponent<CutSceneStage>() == null)
+                if (isSpawnWithTrigger)
                 {
-                    isSpawn = true;
+                    StartCoroutine(EnemySpawnCo());
                 }
             }
         }
@@ -44,23 +46,15 @@ public class EnemySpawn : MonoBehaviour
 
     public void ManualSpawnEnemy()
     {
-        for (int i = 0; i < enemyAmount; i++)
+        if (gameObject.GetComponent<StageManagement>().isAnyPlayer)
         {
-            GameObject newEnemy = Instantiate(enemy, enemyPos[i].position, Quaternion.identity);
-            newEnemy.GetComponent<Enemy>().deathSignal = enemySignal;
-            if (i < enemyAmount)
-            {
-                isSpawn = false;
-                isSpawned = true;
-            }
+            StartCoroutine(EnemySpawnCo());
         }
     }
 
-    public void ChangeSpawnState()
+    private IEnumerator EnemySpawnCo()
     {
-        if (!isSpawned)
-        {
-            isSpawn = true;
-        }
+        yield return new WaitForSeconds(spawnDelayTime);
+        isSpawn = true;
     }
 }

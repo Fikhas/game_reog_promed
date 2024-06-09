@@ -5,20 +5,24 @@ using UnityEngine;
 public class PauseGame : MonoBehaviour
 {
     [SerializeField] GameObject pausePanel;
+    private bool isCanPause;
 
     private void Update()
     {
         if (Input.GetButtonDown("Pause"))
         {
-            if (!pausePanel.activeInHierarchy)
+            if (isCanPause)
             {
-                pausePanel.SetActive(true);
-                Time.timeScale = 0;
-            }
-            else
-            {
-                pausePanel.SetActive(false);
-                Time.timeScale = 1;
+                if (!pausePanel.activeInHierarchy)
+                {
+                    pausePanel.SetActive(true);
+                    Time.timeScale = 0;
+                }
+                else
+                {
+                    pausePanel.SetActive(false);
+                    Time.timeScale = 1;
+                }
             }
         }
     }
@@ -27,5 +31,15 @@ public class PauseGame : MonoBehaviour
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void CanPause()
+    {
+        isCanPause = true;
+    }
+
+    public void CannotPause()
+    {
+        isCanPause = false;
     }
 }

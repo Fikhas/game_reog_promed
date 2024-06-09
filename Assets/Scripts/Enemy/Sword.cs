@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
+    [SerializeField] GameObject swordSoundEffect;
     private float timer;
     private bool isCounting;
 
@@ -13,7 +14,7 @@ public class Sword : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        if (timer > 0.5f && gameObject.GetComponent<Enemy>().currentState != EnemyState.stagger && gameObject.GetComponent<Enemy>().currentState != EnemyState.stat)
+        if (timer > 0.3f && gameObject.GetComponent<Enemy>().currentState != EnemyState.stagger && gameObject.GetComponent<Enemy>().currentState != EnemyState.stat)
         {
             timer = 0;
             Slashing();
@@ -52,11 +53,18 @@ public class Sword : MonoBehaviour
 
     private void Slashing()
     {
-        StartCoroutine(AttackCo());
+        if (gameObject.GetComponent<EnemyWalk>().isStatic == false)
+        {
+            StartCoroutine(AttackCo());
+        }
     }
 
     private IEnumerator AttackCo()
     {
+        if (swordSoundEffect != null)
+        {
+            Instantiate(swordSoundEffect);
+        }
         gameObject.GetComponent<Animator>().SetBool("isAttack", true);
         yield return new WaitForSeconds(.3f);
         gameObject.GetComponent<Animator>().SetBool("isAttack", false);

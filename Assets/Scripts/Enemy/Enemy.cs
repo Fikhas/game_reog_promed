@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public enum EnemyState
@@ -13,6 +14,9 @@ public enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] GameObject deathSoundEffect;
+    [SerializeField] GameObject enemyKnockSounEffect;
+    [SerializeField] GameObject deathEffect;
     public EnemyState currentState;
     public HealthBar healthBar;
     private SpriteRenderer sprite;
@@ -20,10 +24,8 @@ public class Enemy : MonoBehaviour
     private float timer;
     private float delay = 3f;
     private string color = "red";
-
-    [HideInInspector]
-    public Signal deathSignal;
-    public bool isHit;
+    [HideInInspector] public Signal deathSignal;
+    [HideInInspector] public bool isHit;
 
     void Awake()
     {
@@ -60,6 +62,14 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health == 0)
         {
+            if (deathSoundEffect != null)
+            {
+                Instantiate(deathSoundEffect);
+            }
+            if (deathEffect != null)
+            {
+                Instantiate(deathEffect, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
             deathSignal.Raise();
         }
@@ -73,6 +83,7 @@ public class Enemy : MonoBehaviour
             TakeDamage(damage);
         }
         healthBar.SetHealth(health);
+        Instantiate(enemyKnockSounEffect);
     }
 
     private IEnumerator KnockCo(Rigidbody2D enemy, float knockTime)

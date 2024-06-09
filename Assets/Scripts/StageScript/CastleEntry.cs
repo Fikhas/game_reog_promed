@@ -21,6 +21,7 @@ public class CastleEntry : MonoBehaviour
 
     private IEnumerator CastleInCo()
     {
+        player.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
         yield return new WaitForSeconds(1f);
         player.GetComponent<Transform>().position = new Vector3(3, 38, 0);
     }

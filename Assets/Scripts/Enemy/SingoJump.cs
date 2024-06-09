@@ -7,8 +7,11 @@ public class SingoJump : MonoBehaviour
     [SerializeField] float delayJump;
     [SerializeField] float delayBlink;
     [SerializeField] BoxCollider2D singoCollider;
+    [SerializeField] GameObject singoFallHitBox;
     [SerializeField] Signal singoJumpSignal;
     [SerializeField] Signal singoFallSignal;
+    [SerializeField] GameObject fallSoundEffect;
+    [SerializeField] GameObject jumpSoundEffect;
     private GameObject player;
     private float timer;
     private float timerBlink;
@@ -28,6 +31,11 @@ public class SingoJump : MonoBehaviour
 
     private void Update()
     {
+        if (isWillJump)
+        {
+            gameObject.GetComponent<SingoBarong>().currentState = EnemyState.stat;
+            gameObject.GetComponent<EnemyWalk>().anim.SetBool("isWalking", false);
+        }
         if (isWillJump && timerBlink < delayBlink)
         {
             if (isSolid && Mathf.Round(timerBlink * 10.0f) * 0.1f % .4f != 0f)
@@ -60,10 +68,12 @@ public class SingoJump : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().gravityScale = 0;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            Instantiate(fallSoundEffect);
             singoCollider.isTrigger = false;
             singoFallSignal.Raise();
             positionWhenJump = Vector3.zero;
             isJump = false;
+            StartCoroutine(FallHitBoxCo());
             StartCoroutine(SingoIdleDelay());
         }
 
@@ -90,6 +100,7 @@ public class SingoJump : MonoBehaviour
         isWillJump = true;
         yield return new WaitForSeconds(delayBlink);
         GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 30), ForceMode2D.Impulse);
+        Instantiate(jumpSoundEffect);
         positionWhenJump = transform.position;
         singoCollider.isTrigger = true;
         singoJumpSignal.Raise();
@@ -105,5 +116,12 @@ public class SingoJump : MonoBehaviour
         yield return new WaitForSeconds(1f);
         gameObject.GetComponent<SingoBarong>().currentState = EnemyState.idle;
         isCount = false;
+    }
+
+    private IEnumerator FallHitBoxCo()
+    {
+        singoFallHitBox.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        singoFallHitBox.SetActive(false);
     }
 }

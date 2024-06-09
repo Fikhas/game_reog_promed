@@ -11,6 +11,7 @@ public class KeyScript : MonoBehaviour
     [SerializeField] Item item;
     [SerializeField] Inventory playerInventory;
     [SerializeField] GameObject key;
+    [SerializeField] GameObject pickSoundEffect;
     private bool isTaken;
     private bool isOnArea;
     private bool isCanTake;
@@ -24,6 +25,7 @@ public class KeyScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isOnArea && buttonClue.activeInHierarchy && !isTaken)
         {
+            Instantiate(pickSoundEffect);
             isTaken = true;
             playerInventory.AddItem(item);
             buttonClue.SetActive(false);
