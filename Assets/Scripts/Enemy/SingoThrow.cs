@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fikhas.Audio;
 using Mono.Cecil;
 using UnityEngine;
 
 public class SingoThrow : MonoBehaviour
 {
     [SerializeField] GameObject stone;
-    [SerializeField] GameObject throwSoundEffect;
     private float timer;
     private float delay;
     private GameObject target;
@@ -52,7 +52,7 @@ public class SingoThrow : MonoBehaviour
 
     private IEnumerator SingoThrowCo()
     {
-        Instantiate(throwSoundEffect);
+        SoundSystem.Instance.PlayAudio("SingoThrow", false, "s-throw");
         anim.SetBool("isThrow", true);
         Instantiate(stone, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.3f);

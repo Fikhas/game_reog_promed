@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fikhas.Audio;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum PlayerState
@@ -17,14 +19,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] float speed;
-    [SerializeField] GameObject attackSoundEffect;
-    [SerializeField] GameObject deathSoundEffect;
-    [SerializeField] GameObject knockSoundEffect;
-    [SerializeField] GameObject knockWithShieldSoundEffect;
-    [SerializeField] GameObject klonoLaughSoundEffect;
     [SerializeField] Animator healthWarning;
     [SerializeField] Signal healthUnder;
-    [HideInInspector] public PlayerState playerCurrentState;
+    public PlayerState playerCurrentState;
     [HideInInspector] public Vector3 change;
     [HideInInspector] public Rigidbody2D myRigidBody;
     [HideInInspector] public bool isHit;
@@ -55,19 +52,22 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         change = Vector3.zero;
+
         if (playerCurrentState != PlayerState.attack && playerCurrentState != PlayerState.stagger && playerCurrentState != PlayerState.interact)
         {
             change.x = Input.GetAxisRaw("Horizontal");
             change.y = Input.GetAxisRaw("Vertical");
         }
+
         if (Input.GetButtonDown("Attack") && !isCanAttack && playerCurrentState != PlayerState.interact)
         {
-            StartCoroutine(AttackCo());
+            attackCo = StartCoroutine(AttackCo());
         }
         else
         {
             AnimationUpdate();
         }
+
         if (isHit && timer < delay)
         {
             if (color == "red" && Mathf.Round(timer * 10.0f) * 0.1f % .4f != 0f)
@@ -92,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
         {
             currentHealth.runtimeValue -= 1;
         }
+
         if (currentHealth.runtimeValue >= 30)
         {
             healthWarning.SetBool("isWarningOn", false);
@@ -102,17 +103,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Bullet") || other.CompareTag("EnemySword"))
-        {
-            if (playerCurrentState == PlayerState.imun)
-            {
-                Instantiate(knockWithShieldSoundEffect);
-            }
-        }
-    }
-
     void AnimationUpdate()
     {
         if (change != Vector3.zero)
@@ -120,7 +110,6 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
             animator.SetBool("isWalk", true);
-            // MoveCharacter();
         }
         else
         {
@@ -137,47 +126,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // void MoveCharacter()
-    // {
-    //     myRigidBody.MovePosition(
-    //         transform.position + change * speed * Time.deltaTime
-    //     );
-    // }
-
-    private IEnumerator AttackCo()
-    {
-        if (playerCurrentState == PlayerState.imun)
-        {
-            Instantiate(attackSoundEffect);
-            isCanAttack = true;
-            animator.SetBool("isAttack", true);
-            yield return new WaitForSeconds(.3f);
-            isCanAttack = false;
-            animator.SetBool("isAttack", false);
-        }
-        else
-        {
-            Instantiate(attackSoundEffect);
-            isCanAttack = true;
-            animator.SetBool("isAttack", true);
-            playerCurrentState = PlayerState.attack;
-            yield return new WaitForSeconds(.3f);
-            isCanAttack = false;
-            animator.SetBool("isAttack", false);
-            if (playerCurrentState != PlayerState.interact)
-            {
-                playerCurrentState = PlayerState.walk;
-            }
-        }
-    }
-
     public void Knock(float knockTime, float damage)
     {
         currentHealth.runtimeValue -= damage;
         if (currentHealth.runtimeValue > 0)
         {
-            Instantiate(knockSoundEffect);
-            StartCoroutine(KnockCo(.4f));
+            SoundSystem.Instance.PlayAudio("KlonoKnock", false, "k-knock");
+            knockCo = StartCoroutine(KnockCo(.4f));
             healthBar.SetHealth(currentHealth.runtimeValue);
             healthWarning.SetBool("isWarningOn", false);
             if (currentHealth.runtimeValue < 30)
@@ -187,19 +142,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Instantiate(deathSoundEffect);
+            SoundSystem.Instance.PlayAudio("KlonoDeath", false, "k-death");
             this.gameObject.SetActive(false);
             healthBar.SetHealth(currentHealth.runtimeValue);
             playerDeathPanel.SetActive(true);
             Time.timeScale = 0;
         }
-    }
-
-    private IEnumerator KnockCo(float knockTime)
-    {
-        yield return new WaitForSeconds(knockTime);
-        myRigidBody.velocity = Vector2.zero;
-        playerCurrentState = PlayerState.idle;
     }
 
     public void SetPlayerToStagger()
@@ -220,18 +168,83 @@ public class PlayerMovement : MonoBehaviour
 
     public void ImunEffectAtive()
     {
-        StartCoroutine(ImunActiveCo());
+        imunActiveCo = StartCoroutine(ImunActiveCo());
     }
 
+    public void KlonoLaugh()
+    {
+        SoundSystem.Instance.PlayAudio("KlonoLaugh", false, "k-laugh");
+    }
+
+    Coroutine imunActiveCo;
     private IEnumerator ImunActiveCo()
     {
+        if (imunActiveCo != null)
+        {
+            StopCoroutine(imunActiveCo);
+            imunActiveCo = null;
+        }
         Instantiate(imunAnim, this.transform, worldPositionStays: false);
         yield return new WaitForSeconds(3f);
         Destroy(GameObject.FindGameObjectWithTag("ImunAnim"));
     }
 
-    public void KlonoLaugh()
+    Coroutine knockCo;
+    private IEnumerator KnockCo(float knockTime)
     {
-        Instantiate(klonoLaughSoundEffect);
+        if (knockCo != null)
+        {
+            StopCoroutine(knockCo);
+            knockCo = null;
+        }
+
+        yield return new WaitForSeconds(knockTime);
+        myRigidBody.velocity = Vector2.zero;
+        playerCurrentState = PlayerState.idle;
+    }
+
+    Coroutine attackCo;
+    private IEnumerator AttackCo()
+    {
+        if (attackCo != null)
+        {
+            StopCoroutine(attackCo);
+            attackCo = null;
+        }
+
+        if (playerCurrentState == PlayerState.imun)
+        {
+            SoundSystem.Instance.PlayAudio("KlonoAttack", false, "k-attack");
+            isCanAttack = true;
+            animator.SetBool("isAttack", true);
+            yield return new WaitForSeconds(.3f);
+            isCanAttack = false;
+            animator.SetBool("isAttack", false);
+        }
+        else
+        {
+            SoundSystem.Instance.PlayAudio("KlonoAttack", false, "k-attack");
+            isCanAttack = true;
+            animator.SetBool("isAttack", true);
+            playerCurrentState = PlayerState.attack;
+            yield return new WaitForSeconds(.3f);
+            isCanAttack = false;
+            animator.SetBool("isAttack", false);
+            if (playerCurrentState != PlayerState.interact)
+            {
+                playerCurrentState = PlayerState.walk;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet") || other.CompareTag("EnemySword"))
+        {
+            if (playerCurrentState == PlayerState.imun)
+            {
+                SoundSystem.Instance.PlayAudio("KlonoShield", false, "k-shield");
+            }
+        }
     }
 }

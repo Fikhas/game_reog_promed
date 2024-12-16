@@ -53,7 +53,8 @@ public class CutSceneStage : MonoBehaviour
     {
         if (gameObject.GetComponent<StageManagement>().isAnyPlayer)
         {
-            StartCoroutine(ManualCutSceneCo(2f));
+            Debug.Log("Manual Cut Scene Start");
+            StartCoroutine(ManualCutSceneCo(0.1f));
         }
     }
 

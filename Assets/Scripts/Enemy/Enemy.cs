@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fikhas.Audio;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -14,8 +15,6 @@ public enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] GameObject deathSoundEffect;
-    [SerializeField] GameObject enemyKnockSounEffect;
     [SerializeField] GameObject deathEffect;
     public EnemyState currentState;
     public HealthBar healthBar;
@@ -62,10 +61,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health == 0)
         {
-            if (deathSoundEffect != null)
-            {
-                Instantiate(deathSoundEffect);
-            }
+            SoundSystem.Instance.PlayAudio("EnemyDeath", false, "e-death");
             if (deathEffect != null)
             {
                 Instantiate(deathEffect, transform.position, Quaternion.identity);
@@ -83,7 +79,7 @@ public class Enemy : MonoBehaviour
             TakeDamage(damage);
         }
         healthBar.SetHealth(health);
-        Instantiate(enemyKnockSounEffect);
+        SoundSystem.Instance.PlayAudio("EnemyKnock", false, "e-knock");
     }
 
     private IEnumerator KnockCo(Rigidbody2D enemy, float knockTime)

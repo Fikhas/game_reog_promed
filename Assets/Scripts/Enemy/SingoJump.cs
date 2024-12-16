@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fikhas.Audio;
 using UnityEngine;
 
 public class SingoJump : MonoBehaviour
@@ -10,8 +11,6 @@ public class SingoJump : MonoBehaviour
     [SerializeField] GameObject singoFallHitBox;
     [SerializeField] Signal singoJumpSignal;
     [SerializeField] Signal singoFallSignal;
-    [SerializeField] GameObject fallSoundEffect;
-    [SerializeField] GameObject jumpSoundEffect;
     private GameObject player;
     private float timer;
     private float timerBlink;
@@ -68,7 +67,7 @@ public class SingoJump : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().gravityScale = 0;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-            Instantiate(fallSoundEffect);
+            SoundSystem.Instance.PlayAudio("SingoLanding", false, "s-landing");
             singoCollider.isTrigger = false;
             singoFallSignal.Raise();
             positionWhenJump = Vector3.zero;
@@ -100,7 +99,7 @@ public class SingoJump : MonoBehaviour
         isWillJump = true;
         yield return new WaitForSeconds(delayBlink);
         GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 30), ForceMode2D.Impulse);
-        Instantiate(jumpSoundEffect);
+        SoundSystem.Instance.PlayAudio("SingoJump", false, "s-jump");
         positionWhenJump = transform.position;
         singoCollider.isTrigger = true;
         singoJumpSignal.Raise();

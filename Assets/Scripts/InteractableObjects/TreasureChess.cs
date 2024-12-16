@@ -16,12 +16,9 @@ public class TreasureChess : MonoBehaviour
     private bool isOpened;
     [SerializeField] bool isCanOpen;
     private bool isOnArea;
-    // public GameObject textBox;
-    // public TMP_Text textField;
 
     void Start()
     {
-        // textBox.SetActive(false);
         sharedInstance = this;
         placeItem.SetActive(false);
         buttonClue.SetActive(false);

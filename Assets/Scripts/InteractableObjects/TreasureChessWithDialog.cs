@@ -33,7 +33,7 @@ public class TreasureChessWithDialog : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space) && isOnArea && buttonClue.activeInHierarchy)
         {
-            StartCoroutine(OpenChessCo());
+            openChessCo = StartCoroutine(OpenChessCo());
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -57,8 +57,15 @@ public class TreasureChessWithDialog : MonoBehaviour
         }
     }
 
+    Coroutine openChessCo;
     private IEnumerator OpenChessCo()
     {
+        if (openChessCo != null)
+        {
+            StopCoroutine(openChessCo);
+            openChessCo = null;
+        }
+
         yield return new WaitForSeconds(0f);
         anim.SetBool("isOpen", true);
         Instantiate(openSoundEffect);

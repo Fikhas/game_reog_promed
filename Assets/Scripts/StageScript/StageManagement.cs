@@ -17,7 +17,7 @@ public class StageManagement : MonoBehaviour
             if (!isEntered)
             {
                 isAnyPlayer = true;
-                StartCoroutine(EnteredCo());
+                enteredCo = StartCoroutine(EnteredCo());
             }
         }
     }
@@ -38,8 +38,15 @@ public class StageManagement : MonoBehaviour
         }
     }
 
+    Coroutine enteredCo;
     private IEnumerator EnteredCo()
     {
+        if (enteredCo != null)
+        {
+            StopCoroutine(enteredCo);
+            enteredCo = null;
+        }
+
         yield return new WaitForSeconds(.01f);
         isEntered = true;
     }

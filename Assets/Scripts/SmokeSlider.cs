@@ -15,13 +15,5 @@ public class SmokeSlider : MonoBehaviour
         position.x += slideSpeed * Time.deltaTime;
 
         transform.position += position;
-        // smokes[0].transform.Translate(Vector3.right * 10 * Time.deltaTime);
-        // for (int i = 0; i < smokes.Length; i++)
-        // {
-        //     if (Vector3.Distance(smokes[i].transform.position, maxPosition) <= 0)
-        //     {
-        //         smokes[i].transform.position = minPosition;
-        //     }
-        // }
     }
 }

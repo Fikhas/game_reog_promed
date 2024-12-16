@@ -6,9 +6,6 @@ using TMPro;
 
 public class RoomMove : MonoBehaviour
 {
-    // public Vector2 cameraChange;
-    // public Vector3 playerChange;
-    // public CameraMovement cam;
     public GameObject placeText;
     public TMP_Text textPlace;
     public SpawnPoint spawnPoint;
@@ -31,14 +28,11 @@ public class RoomMove : MonoBehaviour
     public bool isClose;
     public bool isCloseWhenEnter;
 
-    // Start is called before the first frame update
     void Start()
     {
-        // cam = Camera.main.GetComponent<CameraMovement>();
         sharedInstance = this;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isSpawn)
@@ -85,9 +79,6 @@ public class RoomMove : MonoBehaviour
         if (other.CompareTag("Player") && !other.isTrigger)
         {
             gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-            // cam.maxPosition += cameraChange;
-            // cam.minPosition += cameraChange;
-            // other.transform.position += playerChange;
             spawnPoint.runtimeSpawnCordinat = spawnCordinat.position;
             if (isNeedText && !isEntered)
             {
@@ -108,10 +99,6 @@ public class RoomMove : MonoBehaviour
                     isClose = true;
                 }
             }
-            // if (gameStates != null)
-            // {
-            //     gameStates.chessSignal = signalToRaise;
-            // }
             isEntered = true;
         }
     }

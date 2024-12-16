@@ -32,36 +32,4 @@ public class StoneMovement : MonoBehaviour
             timer = 0;
         }
     }
-
-    // float bulletTime;
-    // float timer;
-    // [SerializeField] Transform target;
-    // [SerializeField] float moveSpeed;
-
-    // void Update()
-    // {
-    //     // transform.Translate(Vector2.left * 7 * Time.deltaTime);
-    //     gameObject.GetComponent<Rigidbody2D>().velocity = transform.forward * moveSpeed;
-    //     if (gameObject.activeInHierarchy)
-    //     {
-    //         timer += Time.deltaTime;
-    //         if (timer > 3f)
-    //         {
-    //             gameObject.SetActive(false);
-    //             timer = 0f;
-    //         }
-    //     }
-
-    //     Debug.Log(transform.forward);
-    // }
-
-    // private void OnTriggerEnter2D(Collider2D player)
-    // {
-    //     if (player.CompareTag("Player"))
-    //     {
-    //         PlayerMovement.sharedInstance.Knock(.2f, 1);
-    //         gameObject.SetActive(false);
-    //         timer = 0f;
-    //     }
-    // }
 }

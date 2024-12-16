@@ -14,9 +14,10 @@ public class Sword : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        if (timer > 0.3f && gameObject.GetComponent<Enemy>().currentState != EnemyState.stagger && gameObject.GetComponent<Enemy>().currentState != EnemyState.stat)
+        if (timer > .3f && gameObject.GetComponent<Enemy>().currentState != EnemyState.stagger && gameObject.GetComponent<Enemy>().currentState != EnemyState.stat)
         {
             timer = 0;
+            Debug.Log("Enemy is attacking");
             Slashing();
         }
         if (gameObject.GetComponent<Enemy>().currentState == EnemyState.stagger && gameObject.GetComponent<Enemy>().currentState == EnemyState.stat)
@@ -55,16 +56,25 @@ public class Sword : MonoBehaviour
     {
         if (gameObject.GetComponent<EnemyWalk>().isStatic == false)
         {
-            StartCoroutine(AttackCo());
+            Debug.Log("Enterting slashing");
+            attackCo = StartCoroutine(AttackCo());
         }
     }
 
+    private Coroutine attackCo;
     private IEnumerator AttackCo()
     {
+        if (attackCo != null)
+        {
+            StopCoroutine(attackCo);
+            attackCo = null;
+        }
+
         if (swordSoundEffect != null)
         {
             Instantiate(swordSoundEffect);
         }
+
         gameObject.GetComponent<Animator>().SetBool("isAttack", true);
         yield return new WaitForSeconds(.3f);
         gameObject.GetComponent<Animator>().SetBool("isAttack", false);
