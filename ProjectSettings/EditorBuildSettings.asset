@@ -9,9 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 756600061d581ba4d9d8b9fc4180ca7b
   - enabled: 1
+    path: Assets/Scenes/GameplayMobile.unity
+    guid: 42ee048aba12f494592ba27832d5b14e
+  - enabled: 0
     path: Assets/Scenes/Gameplay.unity
     guid: 78aa06ebce2ce4d269e9ae6977de3cfe
   - enabled: 1
     path: Assets/Scenes/CreditScene.unity
     guid: 4df18fa9fd4607b4eaddbcca1d34bcb9
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 7b93b9d8091106e4f9b2cacb420e8084, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 92443efa97e4e21468d0e5418b1443b7, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 94d2575c40f957844b03026e82261a7e, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: cf71aaf6fcc8774419543f3f61204483, type: 2}

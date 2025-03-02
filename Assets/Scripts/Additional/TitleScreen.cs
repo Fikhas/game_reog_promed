@@ -24,6 +24,6 @@ public class TitleScreen : MonoBehaviour
 		playerInventory.numberOfShields = 0;
 		playerInventory.numberOfKeys = 0;
 		yield return new WaitForSeconds(tssTime);
-		SceneManager.LoadScene("Gameplay");
+		SceneManager.LoadScene("GameplayMobile");
 	}
 }
