@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class SingoKnockback : Knockback
 {
-    [SerializeField] Signal singoPunchSignal;
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
-            if (hit != null)
-            {
-                if (other.GetComponent<PlayerMovement>().playerCurrentState != PlayerState.stagger && !other.GetComponent<PlayerMovement>().isHit && other.GetComponent<PlayerMovement>().playerCurrentState != PlayerState.imun)
-                {
-                    hit.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.stagger;
-                    other.GetComponent<PlayerMovement>().Knock(knockTime, damage);
-                    other.GetComponent<PlayerMovement>().isHit = true;
-                    Vector2 difference = hit.transform.position - transform.position;
-                    difference = difference.normalized * thrust;
-                    hit.AddForce(difference, ForceMode2D.Impulse);
-                    singoPunchSignal.Raise();
-                }
-            }
-        }
-    }
+	[SerializeField] Signal singoPunchSignal;
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag("Player"))
+		{
+			Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
+			if (hit != null)
+			{
+				if (other.GetComponent<Player>().playerCurrentState != PlayerState.stagger && !other.GetComponent<Player>().isHit && other.GetComponent<Player>().playerCurrentState != PlayerState.imun)
+				{
+					hit.GetComponent<Player>().playerCurrentState = PlayerState.stagger;
+					other.GetComponent<Player>().Knock(knockTime, damage);
+					other.GetComponent<Player>().isHit = true;
+					Vector2 difference = hit.transform.position - transform.position;
+					difference = difference.normalized * thrust;
+					hit.AddForce(difference, ForceMode2D.Impulse);
+					singoPunchSignal.Raise();
+				}
+			}
+		}
+	}
 }

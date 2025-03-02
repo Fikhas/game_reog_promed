@@ -1,250 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
-using Fikhas.Audio;
-using Unity.VisualScripting;
 using UnityEngine;
-
-public enum PlayerState
-{
-    idle,
-    attack,
-    walk,
-    stagger,
-    hit,
-    imun,
-    interact
-}
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer sprite;
-    [SerializeField] float speed;
-    [SerializeField] Animator healthWarning;
-    [SerializeField] Signal healthUnder;
-    public PlayerState playerCurrentState;
-    [HideInInspector] public Vector3 change;
-    [HideInInspector] public Rigidbody2D myRigidBody;
-    [HideInInspector] public bool isHit;
-    [HideInInspector] public bool isCanAttack;
-    [HideInInspector] public float timer;
-    public GameObject imunAnim;
-    public Animator animator;
-    public FloatValue currentHealth;
-    public HealthBar healthBar;
-    public GameObject playerDeathPanel;
-    public static PlayerMovement sharedInstance;
-    private float delay = 2f;
-    private string color = "red";
+	public static PlayerMovement Instance;
 
-    void Start()
-    {
-        sharedInstance = this;
-        playerCurrentState = PlayerState.idle;
-        myRigidBody = GetComponent<Rigidbody2D>();
-        animator.SetFloat("moveX", 0);
-        animator.SetFloat("moveY", -1);
-        healthBar.SetMaxValue(currentHealth.runtimeValue);
-        healthBar.SetHealth(currentHealth.runtimeValue);
-        healthWarning.SetBool("isWarningOn", false);
-    }
+	[SerializeField]
+	private Rigidbody2D rb;
+	[SerializeField]
+	private float moveSpeed;
 
+	private void Awake()
+	{
+		Instance = this;
+	}
 
-    void Update()
-    {
-        change = Vector3.zero;
+	void FixedUpdate()
+	{
+		if (Player.sharedInstance.playerCurrentState != PlayerState.stagger)
+		{
+			Player.sharedInstance.change.Normalize();
+			rb.velocity = new Vector3(Player.sharedInstance.change.x * moveSpeed, Player.sharedInstance.change.y * moveSpeed);
+		}
+	}
 
-        if (playerCurrentState != PlayerState.attack && playerCurrentState != PlayerState.stagger && playerCurrentState != PlayerState.interact)
-        {
-            change.x = Input.GetAxisRaw("Horizontal");
-            change.y = Input.GetAxisRaw("Vertical");
-        }
-
-        if (Input.GetButtonDown("Attack") && !isCanAttack && playerCurrentState != PlayerState.interact)
-        {
-            attackCo = StartCoroutine(AttackCo());
-        }
-        else
-        {
-            AnimationUpdate();
-        }
-
-        if (isHit && timer < delay)
-        {
-            if (color == "red" && Mathf.Round(timer * 10.0f) * 0.1f % .4f != 0f)
-            {
-                sprite.material.SetColor("_Color", Color.red);
-                color = "white";
-            }
-            else if (color == "white" && Mathf.Round(timer * 10.0f) * 0.1f % .4f == 0f)
-            {
-                sprite.material.SetColor("_Color", Color.white);
-                color = "red";
-            }
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            isHit = false;
-            timer = 0f;
-            sprite.material.SetColor("_Color", Color.white);
-        }
-        if (currentHealth.runtimeValue >= 100)
-        {
-            currentHealth.runtimeValue -= 1;
-        }
-
-        if (currentHealth.runtimeValue >= 30)
-        {
-            healthWarning.SetBool("isWarningOn", false);
-        }
-        else
-        {
-            healthWarning.SetBool("isWarningOn", true);
-        }
-    }
-
-    void AnimationUpdate()
-    {
-        if (change != Vector3.zero)
-        {
-            animator.SetFloat("moveX", change.x);
-            animator.SetFloat("moveY", change.y);
-            animator.SetBool("isWalk", true);
-        }
-        else
-        {
-            animator.SetBool("isWalk", false);
-        }
-    }
-
-    void FixedUpdate()
-    {
-        if (playerCurrentState != PlayerState.stagger)
-        {
-            change.Normalize();
-            myRigidBody.velocity = new Vector3(change.x * speed, change.y * speed, change.z);
-        }
-    }
-
-    public void Knock(float knockTime, float damage)
-    {
-        currentHealth.runtimeValue -= damage;
-        if (currentHealth.runtimeValue > 0)
-        {
-            SoundSystem.Instance.PlayAudio("KlonoKnock", false, "k-knock");
-            knockCo = StartCoroutine(KnockCo(.4f));
-            healthBar.SetHealth(currentHealth.runtimeValue);
-            healthWarning.SetBool("isWarningOn", false);
-            if (currentHealth.runtimeValue < 30)
-            {
-                healthUnder.Raise();
-            }
-        }
-        else
-        {
-            SoundSystem.Instance.PlayAudio("KlonoDeath", false, "k-death");
-            this.gameObject.SetActive(false);
-            healthBar.SetHealth(currentHealth.runtimeValue);
-            playerDeathPanel.SetActive(true);
-            Time.timeScale = 0;
-        }
-    }
-
-    public void SetPlayerToStagger()
-    {
-        playerCurrentState = PlayerState.stagger;
-    }
-
-    public void SetPlayerToInteract()
-    {
-        playerCurrentState = PlayerState.interact;
-    }
-
-    public void SetPlayerToIdle()
-    {
-        playerCurrentState = PlayerState.idle;
-        Time.timeScale = 1;
-    }
-
-    public void ImunEffectAtive()
-    {
-        imunActiveCo = StartCoroutine(ImunActiveCo());
-    }
-
-    public void KlonoLaugh()
-    {
-        SoundSystem.Instance.PlayAudio("KlonoLaugh", false, "k-laugh");
-    }
-
-    Coroutine imunActiveCo;
-    private IEnumerator ImunActiveCo()
-    {
-        if (imunActiveCo != null)
-        {
-            StopCoroutine(imunActiveCo);
-            imunActiveCo = null;
-        }
-        Instantiate(imunAnim, this.transform, worldPositionStays: false);
-        yield return new WaitForSeconds(3f);
-        Destroy(GameObject.FindGameObjectWithTag("ImunAnim"));
-    }
-
-    Coroutine knockCo;
-    private IEnumerator KnockCo(float knockTime)
-    {
-        if (knockCo != null)
-        {
-            StopCoroutine(knockCo);
-            knockCo = null;
-        }
-
-        yield return new WaitForSeconds(knockTime);
-        myRigidBody.velocity = Vector2.zero;
-        playerCurrentState = PlayerState.idle;
-    }
-
-    Coroutine attackCo;
-    private IEnumerator AttackCo()
-    {
-        if (attackCo != null)
-        {
-            StopCoroutine(attackCo);
-            attackCo = null;
-        }
-
-        if (playerCurrentState == PlayerState.imun)
-        {
-            SoundSystem.Instance.PlayAudio("KlonoAttack", false, "k-attack");
-            isCanAttack = true;
-            animator.SetBool("isAttack", true);
-            yield return new WaitForSeconds(.3f);
-            isCanAttack = false;
-            animator.SetBool("isAttack", false);
-        }
-        else
-        {
-            SoundSystem.Instance.PlayAudio("KlonoAttack", false, "k-attack");
-            isCanAttack = true;
-            animator.SetBool("isAttack", true);
-            playerCurrentState = PlayerState.attack;
-            yield return new WaitForSeconds(.3f);
-            isCanAttack = false;
-            animator.SetBool("isAttack", false);
-            if (playerCurrentState != PlayerState.interact)
-            {
-                playerCurrentState = PlayerState.walk;
-            }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Bullet") || other.CompareTag("EnemySword"))
-        {
-            if (playerCurrentState == PlayerState.imun)
-            {
-                SoundSystem.Instance.PlayAudio("KlonoShield", false, "k-shield");
-            }
-        }
-    }
+	void AnimationUpdate()
+	{
+		if (Player.sharedInstance.change != Vector2.zero)
+		{
+			Player.sharedInstance.animator.SetFloat("moveX", Player.sharedInstance.change.x);
+			Player.sharedInstance.animator.SetFloat("moveY", Player.sharedInstance.change.y);
+			Player.sharedInstance.animator.SetBool("isWalk", true);
+		}
+		else
+		{
+			Player.sharedInstance.animator.SetBool("isWalk", false);
+		}
+	}
 }

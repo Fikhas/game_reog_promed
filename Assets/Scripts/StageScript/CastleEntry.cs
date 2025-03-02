@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class CastleEntry : MonoBehaviour
 {
-    private GameObject player;
+	private GameObject player;
 
-    private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
+	private void Start()
+	{
+		player = GameObject.FindGameObjectWithTag("Player");
+	}
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            StartCoroutine(CastleInCo());
-        }
-    }
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag("Player"))
+		{
+			StartCoroutine(CastleInCo());
+		}
+	}
 
-    private IEnumerator CastleInCo()
-    {
-        player.GetComponent<PlayerMovement>().playerCurrentState = PlayerState.interact;
-        yield return new WaitForSeconds(1f);
-        player.GetComponent<Transform>().position = new Vector3(3, 38, 0);
-    }
+	private IEnumerator CastleInCo()
+	{
+		player.GetComponent<Player>().playerCurrentState = PlayerState.interact;
+		yield return new WaitForSeconds(1f);
+		player.GetComponent<Transform>().position = new Vector3(3, 38, 0);
+	}
 }

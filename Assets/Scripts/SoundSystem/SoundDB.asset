@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d5cc84a01adf84597b66529c034157, type: 3}
+  m_Name: SoundDB
+  m_EditorClassIdentifier: 
+  audioDatas:
+  - audioClip: {fileID: 8300000, guid: a2a3bc88ee593db44882b17e58dac00e, type: 3}
+    audioClipName: KlonoAttack
+    audioClipDUration: 0.18575963
+  - audioClip: {fileID: 8300000, guid: cc092ac41893e464b9a40a1a3ede8e2c, type: 3}
+    audioClipName: KlonoDeath
+    audioClipDUration: 0.48
+  - audioClip: {fileID: 8300000, guid: f8a31e382e142054fa0c0840631a5695, type: 3}
+    audioClipName: KlonoKnock
+    audioClipDUration: 0.14353742
+  - audioClip: {fileID: 8300000, guid: a3384346d9412064cbab21b168ad400f, type: 3}
+    audioClipName: KlonoShield
+    audioClipDUration: 0.17011338
+  - audioClip: {fileID: 8300000, guid: 40dd88aed7ad04c499eefee1a90c6a45, type: 3}
+    audioClipName: KlonoLaugh
+    audioClipDUration: 0.9352381
+  - audioClip: {fileID: 8300000, guid: 789c3bee2d71c7a45a3c7447f196545b, type: 3}
+    audioClipName: EnemyDeath
+    audioClipDUration: 0.76873016
+  - audioClip: {fileID: 8300000, guid: 95b8d17c5f6d1254d84082a20f4433a2, type: 3}
+    audioClipName: EnemyKnock
+    audioClipDUration: 0.1
+  - audioClip: {fileID: 8300000, guid: df56ad55b4db33c46ba4a4a717347888, type: 3}
+    audioClipName: ArrowEnemy
+    audioClipDUration: 0.5584583
+  - audioClip: {fileID: 8300000, guid: 385185ba3ec4fe94bafbee5d3ce86744, type: 3}
+    audioClipName: SingoPunch
+    audioClipDUration: 0.103
+  - audioClip: {fileID: 8300000, guid: 87f69988687f7d14eaae766d69a137be, type: 3}
+    audioClipName: SingoThrow
+    audioClipDUration: 0.2854195
+  - audioClip: {fileID: 8300000, guid: c8543de58c84aa4459cb3a3ba9b9d38f, type: 3}
+    audioClipName: SingoLanding
+    audioClipDUration: 0.2554195
+  - audioClip: {fileID: 8300000, guid: 1900c9ee18a606847ac9510d60345457, type: 3}
+    audioClipName: SingoJump
+    audioClipDUration: 0.72347915
