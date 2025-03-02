@@ -84,4 +84,17 @@ public class TreasureChessWithDialog : MonoBehaviour
 	{
 		isCanOpen = true;
 	}
+
+	public void InteractItem()
+	{
+		if (isOnArea && isCanOpen && Player.sharedInstance.playerCurrentState == PlayerState.interact)
+		{
+			Player.sharedInstance.animator.SetBool("isHoldItem", false);
+			placeItem.SetActive(false);
+		}
+		else if (isOnArea && buttonClue.activeInHierarchy)
+		{
+			openChessCo = StartCoroutine(OpenChessCo());
+		}
+	}
 }

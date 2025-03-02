@@ -50,23 +50,6 @@ public class Player : MonoBehaviour
 
 	void Update()
 	{
-		change = Vector3.zero;
-
-		if (playerCurrentState != PlayerState.attack && playerCurrentState != PlayerState.stagger && playerCurrentState != PlayerState.interact)
-		{
-			change.x = Input.GetAxisRaw("Horizontal");
-			change.y = Input.GetAxisRaw("Vertical");
-		}
-
-		if (Input.GetButtonDown("Attack") && !isCanAttack && playerCurrentState != PlayerState.interact)
-		{
-			attackCo = StartCoroutine(AttackCo());
-		}
-		else
-		{
-			AnimationUpdate();
-		}
-
 		if (isHit && timer < delay)
 		{
 			if (color == "red" && Mathf.Round(timer * 10.0f) * 0.1f % .4f != 0f)
@@ -99,20 +82,6 @@ public class Player : MonoBehaviour
 		else
 		{
 			healthWarning.SetBool("isWarningOn", true);
-		}
-	}
-
-	void AnimationUpdate()
-	{
-		if (change != Vector2.zero)
-		{
-			animator.SetFloat("moveX", change.x);
-			animator.SetFloat("moveY", change.y);
-			animator.SetBool("isWalk", true);
-		}
-		else
-		{
-			animator.SetBool("isWalk", false);
 		}
 	}
 
@@ -193,8 +162,8 @@ public class Player : MonoBehaviour
 		playerCurrentState = PlayerState.idle;
 	}
 
-	Coroutine attackCo;
-	private IEnumerator AttackCo()
+	public Coroutine attackCo;
+	public IEnumerator AttackCo()
 	{
 		if (attackCo != null)
 		{

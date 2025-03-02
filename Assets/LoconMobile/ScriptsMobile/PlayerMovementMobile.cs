@@ -21,9 +21,28 @@ public class PlayerMovementMobile : MonoBehaviour
 		Instance = this;
 	}
 
-	private void FixedUpdate()
+	private void Update()
 	{
 		change = Vector2.zero;
+
+		if (Player.sharedInstance.playerCurrentState != PlayerState.attack && Player.sharedInstance.playerCurrentState != PlayerState.stagger && Player.sharedInstance.playerCurrentState != PlayerState.interact)
+		{
+			change.x = Input.GetAxisRaw("Horizontal");
+			change.y = Input.GetAxisRaw("Vertical");
+		}
+
+		if (!Player.sharedInstance.isCanAttack && Player.sharedInstance.playerCurrentState != PlayerState.interact)
+		{
+			return;
+		}
+		else
+		{
+			AnimationUpdate();
+		}
+	}
+
+	private void FixedUpdate()
+	{
 		if (Player.sharedInstance.playerCurrentState != PlayerState.attack && Player.sharedInstance.playerCurrentState != PlayerState.interact)
 		{
 			change = new Vector2(joystick.Horizontal, joystick.Vertical);
