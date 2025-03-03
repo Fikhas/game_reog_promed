@@ -136,9 +136,9 @@ PlayerSettings:
     Others: 1
   bundleVersion: 1.0
   preloadedAssets:
-  - {fileID: 11400000, guid: 94d2575c40f957844b03026e82261a7e, type: 2}
   - {fileID: 11400000, guid: 7b93b9d8091106e4f9b2cacb420e8084, type: 2}
   - {fileID: 7624531782061383498, guid: 92443efa97e4e21468d0e5418b1443b7, type: 2}
+  - {fileID: 11400000, guid: 94d2575c40f957844b03026e82261a7e, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -247,7 +247,7 @@ PlayerSettings:
   useCustomMainGradleTemplate: 0
   useCustomLauncherGradleManifest: 0
   useCustomBaseGradleTemplate: 0
-  useCustomGradlePropertiesTemplate: 0
+  useCustomGradlePropertiesTemplate: 1
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 1
   AndroidTargetDevices: 0
