@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: SoundDB
   m_EditorClassIdentifier: 
   audioDatas:
-  - audioClip: {fileID: 8300000, guid: a2a3bc88ee593db44882b17e58dac00e, type: 3}
+  - audioClip: {fileID: 8300000, guid: 02a1a0833b66d2e45bd281a4032df033, type: 3}
     audioClipName: KlonoAttack
-    audioClipDUration: 0.18575963
+    audioClipDUration: 0.6338125
   - audioClip: {fileID: 8300000, guid: cc092ac41893e464b9a40a1a3ede8e2c, type: 3}
     audioClipName: KlonoDeath
     audioClipDUration: 0.48
   - audioClip: {fileID: 8300000, guid: f8a31e382e142054fa0c0840631a5695, type: 3}
     audioClipName: KlonoKnock
     audioClipDUration: 0.14353742
-  - audioClip: {fileID: 8300000, guid: a3384346d9412064cbab21b168ad400f, type: 3}
+  - audioClip: {fileID: 8300000, guid: 7d724132305b4b24d9e2915e99adba45, type: 3}
     audioClipName: KlonoShield
-    audioClipDUration: 0.17011338
+    audioClipDUration: 1.267625
   - audioClip: {fileID: 8300000, guid: 40dd88aed7ad04c499eefee1a90c6a45, type: 3}
     audioClipName: KlonoLaugh
     audioClipDUration: 0.9352381
-  - audioClip: {fileID: 8300000, guid: 789c3bee2d71c7a45a3c7447f196545b, type: 3}
+  - audioClip: {fileID: 8300000, guid: cb146cb43577a144a89b4f47259e9d84, type: 3}
     audioClipName: EnemyDeath
-    audioClipDUration: 0.76873016
+    audioClipDUration: 0.42254168
   - audioClip: {fileID: 8300000, guid: 95b8d17c5f6d1254d84082a20f4433a2, type: 3}
     audioClipName: EnemyKnock
     audioClipDUration: 0.1
@@ -49,3 +49,6 @@ MonoBehaviour:
   - audioClip: {fileID: 8300000, guid: 1900c9ee18a606847ac9510d60345457, type: 3}
     audioClipName: SingoJump
     audioClipDUration: 0.72347915
+  - audioClip: {fileID: 8300000, guid: b0f77e2115cd9484ba30645492ef99c4, type: 3}
+    audioClipName: KlonoWalk
+    audioClipDUration: 3.3802917
